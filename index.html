@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首爾五天四夜專屬行程指南 🇰🇷✨</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                        cute: ['"Jua"', '"Noto Sans TC"', 'sans-serif'],
+                    },
+                    colors: {
+                        bgCute: '#FFF0F5', 
+                        textBrown: '#5D4037', 
+                        pinkMain: '#FF8DA1', 
+                        pinkDark: '#FF6B8B',
+                        pinkLight: '#FFE4E8',
+                        pinkBorder: '#FFB6C1',
+                        cuteBlue: '#BDE0FE',
+                        cuteYellow: '#FFF3B0',
+                        cuteOrange: '#FFDAC1',
+                        cutePurple: '#E8DFF5',
+                        cuteTeal: '#99F6E4'
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* 1. 📖 韓國手帳本點陣背景 */
+        body {
+            background-color: #FFF0F5;
+            color: #5D4037;
+            -webkit-tap-highlight-color: transparent;
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(232, 221, 245, 0.5) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.2) 0%, transparent 30%),
+                radial-gradient(#FFB6C1 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px;
+            background-position: 0 0, 0 0, 0 0, 12px 12px;
+        }
+
+        /* 4. 🎀 粉系自訂卷軸 */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #FFE4E8; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #FF8DA1; border-radius: 10px; border: 2px solid #FFE4E8; }
+        ::-webkit-scrollbar-thumb:hover { background: #FF6B8B; }
+
+        /* 2. ✨ Icon 果凍彈跳動畫 */
+        @keyframes jellyBounce {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(-3deg); }
+            50% { transform: scale(0.95) rotate(2deg); }
+            75% { transform: scale(1.05) rotate(-1deg); }
+        }
+        .icon-jelly {
+            transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .icon-jelly:hover {
+            animation: jellyBounce 0.5s ease-out;
+        }
+
+        /* 5. ✂️ 波浪分隔線 */
+        .hand-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+            opacity: 0.6;
+        }
+        .hand-divider::before,
+        .hand-divider::after {
+            content: '';
+            flex: 1;
+            height: 3px;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='6' viewBox='0 0 40 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3 Q10 0 20 3 T40 3' stroke='%23FFB6C1' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+            background-size: 40px 6px;
+            border-radius: 2px;
+        }
+        .hand-divider span { color: #FFB6C1; font-size: 14px; }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* 卡片底線波浪裝飾 */
+        .wavy-divider {
+            height: 4px;
+            background: url("data:image/svg+xml,%3Csvg width='20' height='4' viewBox='0 0 20 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 2 Q5 0 10 2 T20 2' stroke='%23FFB6C1' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+            background-size: 20px 4px;
+            opacity: 0.4;
+            margin: 16px 0;
+        }
+
+        .cute-card {
+            background-color: #FFFFFF;
+            border: 3px solid #FFB6C1;
+            border-radius: 28px;
+            box-shadow: 4px 4px 0px #FFB6C1;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+        .cute-card::before {
+            content: '✦';
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            font-size: 14px;
+            color: #FFB6C1;
+            background: #FFF0F5;
+            padding: 0 6px;
+        }
+        .cute-card:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #FFB6C1; }
+
+        .cute-btn { border: 2px solid transparent; transition: all 0.2s ease; }
+        .cute-btn.active {
+            background-color: #FF8DA1; color: white; border: 2px solid #FF6B8B;
+            box-shadow: 3px 3px 0px #FF6B8B; transform: translateY(-2px);
+        }
+        .cute-btn-inactive {
+            background-color: white; color: #FF8DA1; border: 2px solid #FFE4E8;
+            box-shadow: 2px 2px 0px #FFE4E8;
+        }
+
+        .timeline-line {
+            position: absolute; left: 1.25rem; top: 2.5rem; bottom: -1rem;
+            width: 0px; border-left: 4px dashed #FFB6C1; z-index: 0;
+        }
+        .timeline-item:last-child .timeline-line { display: none; }
+        
+        .animate-fade-in { animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        .ai-bubble { border: 2px solid #FFB6C1; box-shadow: 2px 2px 0px #FFB6C1; }
+        .ai-chat-content p { margin-bottom: 0.5rem; }
+        .ai-chat-content p:last-child { margin-bottom: 0; }
+        .ai-chat-content strong { color: #FF6B8B; }
+        
+        .cb-custom {
+            appearance: none; background-color: #fff; margin: 0; font: inherit;
+            color: currentColor; width: 1.5em; height: 1.5em; border: 2px solid #FFB6C1;
+            border-radius: 0.35em; display: grid; place-content: center;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .cb-custom::before {
+            content: ""; width: 0.8em; height: 0.8em; transform: scale(0);
+            transition: 120ms transform ease-in-out; box-shadow: inset 1em 1em #FF8DA1;
+            background-color: transform-origin: center;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+        .cb-custom:checked { border-color: #FF8DA1; }
+        .cb-custom:checked::before { transform: scale(1); }
+        
+        .bounce-slight { animation: bounceSlight 2s infinite; }
+        @keyframes bounceSlight {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .modal-input {
+            width: 100%; border: 2px solid #FFE4E8; border-radius: 12px; padding: 10px 14px;
+            font-size: 14px; outline: none; transition: border-color 0.2s; font-family: inherit;
+        }
+        .modal-input:focus { border-color: #FF8DA1; }
+        
+        .action-btns { display: flex; gap: 8px; }
+        
+        .modal-content-scroll { max-height: 80vh; overflow-y: auto; padding-right: 4px; }
+        .modal-content-scroll::-webkit-scrollbar { width: 6px; }
+        .modal-content-scroll::-webkit-scrollbar-thumb { background-color: #FFE4E8; border-radius: 10px; }
+
+        .transport-dot { width: 12px; height: 12px; border-radius: 50%; border: 3px solid #BDE0FE; background-color: white; z-index: 2; position: relative; }
+        .transport-line { flex-grow: 1; height: 2px; background-image: linear-gradient(to right, #BDE0FE 50%, transparent 50%); background-size: 10px 10px; margin: 0 8px; }
+
+        .hand-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+            opacity: 0.5;
+        }
+        .hand-divider::before,
+        .hand-divider::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='4' viewBox='0 0 40 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 2 Q10 0 20 2 T40 2' stroke='%23FFB6C1' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+            background-size: 40px 4px;
+        }
+        .hand-divider span { color: #FFB6C1; font-size: 14px; }
+
+        .cute-banner {
+            background: linear-gradient(135deg, #FFE4E8 0%, #E8DFF5 50%, #FFF0F5 100%);
+            border: 3px solid #FFB6C1;
+            border-radius: 24px;
+            padding: 16px 20px;
+            margin: 12px 0 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 3px 3px 0px #FFB6C1;
+            position: relative;
+            overflow: hidden;
+        }
+        .cute-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 2l1.5 4.5h4.5l-3.5 2.5 1.5 4.5-4-3-4 3 1.5-4.5-3.5-2.5h4.5z' fill='%23FFB6C1' fill-opacity='0.1'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .cute-banner-icon {
+            font-size: 40px;
+            flex-shrink: 0;
+            filter: drop-shadow(2px 2px 0px #FFB6C1);
+        }
+        .cute-banner-text h3 {
+            font-family: 'Jua', 'Noto Sans TC', sans-serif;
+            font-size: 18px;
+            color: #FF6B8B;
+            margin-bottom: 2px;
+        }
+        .cute-banner-text p {
+            font-size: 12px;
+            color: #5D4037;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-pink-200 selection:text-pink-900 pb-24">
+
+    <div class="max-w-2xl mx-auto min-h-screen bg-[#FFF0F5] relative">
+        
+        <header class="bg-gradient-to-r from-pink-400 via-pink-300 to-pink-200 text-white p-6 rounded-b-[40px] border-b-4 border-pink-300 shadow-md sticky top-0 z-40">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h1 class="text-3xl font-cute font-bold mb-1 tracking-wide flex items-center gap-2">
+                        <svg class="w-7 h-7 text-yellow-300" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4h7.6l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z"/></svg>
+                        首爾專屬指南
+                    </h1>
+                    <p class="text-pink-100 text-sm font-medium">5月9日 - 5月13日 | 與閨蜜的吃喝玩樂之旅</p>
+                </div>
+                <div class="flex flex-col items-end gap-2">
+                    <div class="bg-white/20 border-2 border-white/30 px-3 py-1 rounded-full text-sm font-bold backdrop-blur-sm shadow-sm flex items-center gap-1">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        Seoul
+                    </div>
+                    <div id="weatherWidget" class="bg-white text-pinkMain px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1 animate-pulse border-2 border-pink-200">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        讀取天氣中...
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="flex overflow-x-auto mt-6 no-scrollbar gap-3 pb-2 pt-1 px-1" id="mainNav">
+                <button onclick="switchTab('overview')" data-tab="overview" class="nav-btn cute-btn active flex-shrink-0 px-4 py-2 rounded-full text-sm font-cute text-base whitespace-nowrap flex items-center gap-1.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h12M3 10h12M3 15h8"/></svg>
+                    總覽
+                </button>
+                <button onclick="switchTab('day1')" data-tab="day1" class="nav-btn cute-btn cute-btn-inactive flex-shrink-0 px-4 py-2 rounded-full text-sm font-cute text-base whitespace-nowrap">Day 1</button>
+                <button onclick="switchTab('day2')" data-tab="day2" class="nav-btn cute-btn cute-btn-inactive flex-shrink-0 px-4 py-2 rounded-full text-sm font-cute text-base whitespace-nowrap">Day 2</button>
+                <button onclick="switchTab('day3')" data-tab="day3" class="nav-btn cute-btn cute-btn-inactive flex-shrink-0 px-4 py-2 rounded-full text-sm font-cute text-base whitespace-nowrap">Day 3</button>
+                <button onclick="switchTab('day4')" data-tab="day4" class="nav-btn cute-btn cute-btn-inactive flex-shrink-0 px-4 py-2 rounded-full text-sm font-cute text-base whitespace-nowrap">Day 4</button>
+                <button onclick="switchTab('day5')" data-tab="day5" class="nav-btn cute-btn cute-btn-inactive flex-shrink-0 px-4 py-2 rounded-full text-sm font-cute text-base whitespace-nowrap">Day 5</button>
+                <button onclick="switchTab('lotteworld')" data-tab="lotteworld" class="nav-btn cute-btn cute-btn-inactive flex-shrink-0 px-4 py-2 rounded-full text-sm font-cute text-base whitespace-nowrap flex items-center gap-1.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2M6.34 6.34l1.42 1.42M16.24 16.24l1.42 1.42M6.34 17.66l1.42-1.42M16.24 7.76l1.42-1.42"/></svg>
+                    樂天攻略
+                </button>
+                <button onclick="switchTab('transport')" data-tab="transport" class="nav-btn cute-btn cute-btn-inactive flex-shrink-0 px-4 py-2 rounded-full text-sm font-cute text-base whitespace-nowrap flex items-center gap-1.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="14" height="10" rx="2"/><path d="M8 6V4M16 6V4M4 11h14"/></svg>
+                    交通指南
+                </button>
+                <button onclick="switchTab('shopping')" data-tab="shopping" class="nav-btn cute-btn cute-btn-inactive flex-shrink-0 px-4 py-2 rounded-full text-sm font-cute text-base whitespace-nowrap flex items-center gap-1.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9a2 2 0 01-2 1.5h-7a2 2 0 01-2-1.5L6 6z"/><path d="M9 6V4a3 3 0 016 0v2"/></svg>
+                    購物清單
+                </button>
+                <button onclick="switchTab('food')" data-tab="food" class="nav-btn cute-btn cute-btn-inactive flex-shrink-0 px-4 py-2 rounded-full text-sm font-cute text-base whitespace-nowrap flex items-center gap-1.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2M7 2v20M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+                    美食指南
+                </button>
+                <button onclick="switchTab('checklist')" data-tab="checklist" class="nav-btn cute-btn cute-btn-inactive flex-shrink-0 px-4 py-2 rounded-full text-sm font-cute text-base whitespace-nowrap flex items-center gap-1.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                    出發清單
+                </button>
+            </nav>
+        </header>
+
+        <main class="p-5" id="contentArea"></main>
+
+    </div>
+
+    <!-- Decorative Background Elements -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-20 left-8 w-10 h-10 opacity-10 animate-bounce" style="animation-duration: 3s;">
+            <svg viewBox="0 0 24 24" fill="#FFB6C1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="8" cy="10" r="1.5"/><circle cx="16" cy="10" r="1.5"/><path d="M12 16c-1.65 0-3-1.35-3-3h6c0 1.65-1.35 3-3 3z"/></svg>
+        </div>
+        <div class="absolute top-40 right-12 w-8 h-8 opacity-10" style="animation: bounce 4s infinite 1s;">
+            <svg viewBox="0 0 24 24" fill="#FF8DA1"><path d="M12 2l2.4 7.4h7.6l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z"/></svg>
+        </div>
+        <div class="absolute bottom-40 left-10 w-8 h-8 opacity-10" style="animation: bounce 5s infinite 0.5s;">
+            <svg viewBox="0 0 24 24" fill="#FFB6C1"><path d="M12 2l2.4 7.4h7.6l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z"/></svg>
+        </div>
+        <div class="absolute bottom-20 right-20 w-12 h-12 opacity-10" style="animation: bounce 3.5s infinite 2s;">
+            <svg viewBox="0 0 24 24" fill="#FF6B8B"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <div class="absolute top-60 left-1/4 w-6 h-6 opacity-10" style="animation: bounce 6s infinite 1.5s;">
+            <svg viewBox="0 0 24 24" fill="#BDE0FE"><path d="M19.5 12c0-1.93-.87-3.67-2.25-4.88-.35-.3-.87-.26-1.15.08l-1.42 1.7c-.22.26-.19.65.07.87.9.77 1.45 1.89 1.45 3.12 0 .55-.45 1-1 1s-1-.45-1-1c0-1.38-.73-2.6-1.85-3.35-.34-.22-.76-.15-1.04.15L11.36 12H6c-1.1 0-2 .9-2 2v5h17v-5c0-1.1-.9-2-2-2h-3.58l-.72-.92c-.28.22-.63.35-1 .35-.55 0-1-.45-1-1s.45-1 1-1c1.1 0 2 .9 2 2z"/></svg>
+        </div>
+        <div class="absolute bottom-60 right-1/3 w-8 h-8 opacity-10" style="animation: bounce 4.5s infinite 0.8s;">
+            <svg viewBox="0 0 24 24" fill="#FFF3B0"><path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>
+        </div>
+    </div>
+
+    <!-- 左下角：回到總覽與最頂端 FABs -->
+    <div class="fixed bottom-6 left-6 flex flex-col gap-3 z-[60]">
+        <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="bg-white border-4 border-pinkLight text-pinkMain w-14 h-14 rounded-full shadow-[0_4px_10px_rgba(255,141,161,0.4)] flex items-center justify-center hover:bg-pinkLight hover:border-pinkMain transition-transform transform hover:scale-105" title="回到最頂">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
+        <button onclick="switchTab('overview')" class="bg-white border-4 border-pinkLight text-pinkMain w-14 h-14 rounded-full shadow-[0_4px_10px_rgba(255,141,161,0.4)] flex items-center justify-center hover:bg-pinkLight hover:border-pinkMain transition-transform transform hover:scale-105" title="回到總覽">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/></svg>
+        </button>
+    </div>
+
+    <!-- Modals (Event, Guide, Transport) -->
+    <!-- Event Modal -->
+    <div id="eventModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4 opacity-0 transition-opacity">
+        <div class="cute-card w-full max-w-md p-6 bg-white relative">
+            <button onclick="closeModal('eventModal')" class="absolute top-4 right-4 text-gray-400 hover:text-pinkMain z-10"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <h3 id="evModalTitle" class="text-xl font-cute font-bold text-pinkMain mb-4 flex items-center gap-2"><span>✨</span> 新增行程</h3>
+            <div class="space-y-4 modal-content-scroll pb-2">
+                <div><label class="block text-sm font-bold text-textBrown mb-1">時間 (例: 10:00 - 12:00)</label><input type="text" id="evTime" class="modal-input" placeholder="填寫時間"></div>
+                <div><label class="block text-sm font-bold text-textBrown mb-1">標題</label><input type="text" id="evTitle" class="modal-input" placeholder="例: 弘大逛街"></div>
+                <div><label class="block text-sm font-bold text-textBrown mb-1">主行程描述</label><input type="text" id="evDesc" class="modal-input" placeholder="準備買爆..."></div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div><label class="block text-sm font-bold text-textBrown mb-1">地點名稱</label><input type="text" id="evLocation" class="modal-input" placeholder="例: 弘大商圈"></div>
+                    <div>
+                        <label class="block text-sm font-bold text-textBrown mb-1">類別</label>
+                        <select id="evType" class="modal-input bg-white cursor-pointer">
+                            <option value="shop">🛍️ 購物</option><option value="food">🍽️ 美食</option>
+                            <option value="attraction">📸 景點</option><option value="transport">🚗 交通</option>
+                            <option value="hotel">🏨 住宿</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t-2 border-dashed border-pinkLight">
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="block text-sm font-bold text-textBrown">📝 備註 / 參考地點</label>
+                        <button type="button" onclick="addSubItemRow()" class="text-xs bg-pinkLight text-pinkDark px-2 py-1 rounded-lg font-bold hover:bg-pinkBorder transition-colors">＋ 新增一筆</button>
+                    </div>
+                    <p class="text-[11px] text-gray-400 mb-2 font-medium">可加入多間商店或餐廳，系統會自動轉換為清單與導航。</p>
+                    <div id="subItemsContainer" class="space-y-3"></div>
+                </div>
+                <input type="hidden" id="evDayId"><input type="hidden" id="evIndex">
+                <button onclick="submitEvent()" class="w-full bg-pinkMain text-white font-bold py-3 rounded-xl mt-4 border-2 border-pinkDark shadow-[3px_3px_0px_#FF6B8B] hover:translate-y-[-2px] transition-transform">確定儲存</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guide Modal -->
+    <div id="guideModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4 opacity-0 transition-opacity">
+        <div class="cute-card w-full max-w-md p-6 bg-white relative">
+            <button onclick="closeModal('guideModal')" class="absolute top-4 right-4 text-gray-400 hover:text-pinkMain z-10"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <h3 id="gdModalTitle" class="text-xl font-cute font-bold text-pinkMain mb-4 flex items-center gap-2"><span>📌</span> 新增地點</h3>
+            <div class="space-y-4 modal-content-scroll pb-2">
+                <div><label class="block text-sm font-bold text-textBrown mb-1">店名 / 地點</label><input type="text" id="gdName" class="modal-input" placeholder="例: 橋村炸雞"></div>
+                <div><label class="block text-sm font-bold text-textBrown mb-1">必買 / 必吃描述</label><input type="text" id="gdDesc" class="modal-input" placeholder="例: 必吃蜂蜜口味"></div>
+                <div><label class="block text-sm font-bold text-textBrown mb-1">地址或關鍵字 (自動連接地圖)</label><input type="text" id="gdKeyword" class="modal-input" placeholder="例: 弘大 橋村炸雞"></div>
+                <input type="hidden" id="gdType"><input type="hidden" id="gdCatIndex"><input type="hidden" id="gdItemIndex">
+                <button onclick="submitGuideItem()" class="w-full bg-pinkMain text-white font-bold py-3 rounded-xl mt-2 border-2 border-pinkDark shadow-[3px_3px_0px_#FF6B8B] hover:translate-y-[-2px] transition-transform">儲存地點</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transport Modal -->
+    <div id="transportModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4 opacity-0 transition-opacity">
+        <div class="cute-card w-full max-w-md p-6 bg-white relative">
+            <button onclick="closeModal('transportModal')" class="absolute top-4 right-4 text-gray-400 hover:text-pinkMain z-10"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <h3 id="tpModalTitle" class="text-xl font-cute font-bold text-blue-500 mb-4 flex items-center gap-2"><span>🚇</span> 新增交通路線</h3>
+            <div class="space-y-4 modal-content-scroll pb-2">
+                <div class="grid grid-cols-2 gap-2">
+                    <div><label class="block text-sm font-bold text-textBrown mb-1">所屬天數</label><select id="tpDay" class="modal-input bg-white cursor-pointer"><option value="Day 1">Day 1</option><option value="Day 2">Day 2</option><option value="Day 3">Day 3</option><option value="Day 4">Day 4</option><option value="Day 5">Day 5</option></select></div>
+                    <div><label class="block text-sm font-bold text-textBrown mb-1">行程標題</label><input type="text" id="tpTitle" class="modal-input" placeholder="例: 抵達及市區"></div>
+                </div>
+                <div class="flex items-center gap-2 bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                    <div class="flex-1"><label class="block text-[11px] font-bold text-blue-500 mb-1">起點</label><input type="text" id="tpOrigin" class="modal-input !py-1.5" placeholder="例: 仁川機場"></div><span class="text-xl mt-4">➔</span><div class="flex-1"><label class="block text-[11px] font-bold text-blue-500 mb-1">終點</label><input type="text" id="tpDest" class="modal-input !py-1.5" placeholder="例: 孔德站"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div><label class="block text-sm font-bold text-textBrown mb-1">導航方式</label><select id="tpMode" class="modal-input bg-white cursor-pointer"><option value="transit">🚇 大眾運輸</option><option value="driving">🚕 駕車 / 的士</option><option value="walking">🚶 步行</option></select></div>
+                    <div><label class="block text-sm font-bold text-textBrown mb-1">預估時間</label><input type="text" id="tpTime" class="modal-input" placeholder="例: 約 55 分鐘"></div>
+                </div>
+                <div><label class="block text-sm font-bold text-textBrown mb-1">詳細路線說明</label><textarea id="tpDesc" class="modal-input min-h-[80px]" placeholder="例: 乘搭地鐵 2 號線..."></textarea></div>
+                <input type="hidden" id="tpIndex">
+                <button onclick="submitTransport()" class="w-full bg-blue-400 text-white font-bold py-3 rounded-xl mt-2 border-2 border-blue-500 shadow-[3px_3px_0px_#3B82F6] hover:translate-y-[-2px] transition-transform">儲存交通路線</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checklist Category Modal -->
+    <div id="checklistCatModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4 opacity-0 transition-opacity">
+        <div class="cute-card w-full max-w-md p-6 bg-white relative">
+            <button onclick="closeModal('checklistCatModal')" class="absolute top-4 right-4 text-gray-400 hover:text-teal-500 z-10"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <h3 id="clCatModalTitle" class="text-xl font-cute font-bold text-teal-500 mb-4 flex items-center gap-2"><span>📂</span> 新增分類</h3>
+            <div class="space-y-4 modal-content-scroll pb-2">
+                <div><label class="block text-sm font-bold text-textBrown mb-1">分類標題 (如: 📁 證件與重要物品)</label><input type="text" id="clCatTitle" class="modal-input" placeholder="例: 📁 證件與重要物品"></div>
+                <input type="hidden" id="clCatIndex">
+                <button onclick="submitChecklistCategory()" class="w-full bg-teal-400 text-white font-bold py-3 rounded-xl mt-2 border-2 border-teal-500 shadow-[3px_3px_0px_#14B8A6] hover:translate-y-[-2px] transition-transform">儲存分類</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checklist Item Modal -->
+    <div id="checklistItemModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4 opacity-0 transition-opacity">
+        <div class="cute-card w-full max-w-md p-6 bg-white relative">
+            <button onclick="closeModal('checklistItemModal')" class="absolute top-4 right-4 text-gray-400 hover:text-teal-500 z-10"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <h3 id="clItemModalTitle" class="text-xl font-cute font-bold text-teal-500 mb-4 flex items-center gap-2"><span>✅</span> 新增物品</h3>
+            <div class="space-y-4 modal-content-scroll pb-2">
+                <div><label class="block text-sm font-bold text-textBrown mb-1">物品描述</label><input type="text" id="clItemText" class="modal-input" placeholder="例: 特區護照 (最少 6 個月有效期)"></div>
+                <input type="hidden" id="clItemCatIndex"><input type="hidden" id="clItemIndex">
+                <button onclick="submitChecklistItem()" class="w-full bg-teal-400 text-white font-bold py-3 rounded-xl mt-2 border-2 border-teal-500 shadow-[3px_3px_0px_#14B8A6] hover:translate-y-[-2px] transition-transform">儲存物品</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const gMap = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+        const gDir = (origin, dest, mode = 'transit') => `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(dest)}&travelmode=${mode}`;
+        const HOTEL_NAME = "Roynet Hotel Seoul Mapo";
+
+        const typeConfig = {
+            hotel: { icon: '🏨', color: 'bg-cutePurple text-purple-800 border-2 border-purple-200' },
+            shop: { icon: '🛍️', color: 'bg-pinkLight text-pinkDark border-2 border-pink-200' },
+            food: { icon: '🍽️', color: 'bg-cuteOrange text-orange-800 border-2 border-orange-200' },
+            attraction: { icon: '📸', color: 'bg-cuteBlue text-blue-800 border-2 border-blue-200' },
+            transport: { icon: '🚗', color: 'bg-gray-100 text-gray-700 border-2 border-gray-300' }
+        };
+
+        const defaultData = {
+            overview: { hotel: "麻浦魯內酒店 (Roynet Hotel Seoul Mapo)", flights: "去程: 5/9 下午 | 回程: 5/13 15:25 (UO 631)" },
+            days: [
+                {
+                    id: 'day1', title: 'Day 1: 到達、美妝與弘大血拼之夜', date: '5月9日 (六)',
+                    events: [
+                        { time: '14:30 – 17:00', duration: '2.5hr', type: 'hotel', icon: '🏨', color: 'bg-cutePurple text-purple-800 border-2 border-purple-200', title: '入境與前往酒店', desc: '搭 AREX 直達孔德站，入住 麻浦魯內酒店。', location: '孔德站', routeDesc: '搭乘 AREX', routeLink: gDir('Incheon Airport', HOTEL_NAME, 'transit') },
+                        { time: '17:30 – 20:00', duration: '2.5hr', type: 'shop', icon: '🛍️', color: 'bg-pinkLight text-pinkDark border-2 border-pink-200', title: '弘大商圈血拼', desc: '由酒店出發前往。主攻平價年輕服飾、美妝、盲盒。', location: '弘大商圈', routeDesc: '地鐵/的士', routeLink: gDir(HOTEL_NAME, 'Hongdae Street Seoul', 'transit'), subItems: [ 
+                            { name: 'Olive Young 弘大旗艦店', desc: '樓高三層，美妝極齊全，可即場退稅。', link: gMap('서울 마포구 양화로 156'), keyword: '서울 마포구 양화로 156' }, 
+                            { name: 'POP MART 弘大店', desc: '巨型夢幻盲盒店，抽 Labubu 氣氛佳。', link: gMap('서울 마포구 홍익로 17'), keyword: '서울 마포구 홍익로 17' }, 
+                            { name: '時空空間', desc: '整面牆的平價韓系金屬耳環、髮夾。', link: gMap('서울 마포구 홍익로3길 44'), keyword: '서울 마포구 홍익로3길 44' },
+                            { name: 'Market A', desc: '典型韓系極簡、大地色系，質感佳且平親民。', link: gMap('서울 마포구 홍익로3길 8'), keyword: '서울 마포구 홍익로3길 8' },
+                            { name: 'M Playground', desc: '弘大地標藍色貨櫃，極平價休閒街頭風。', link: gMap('서울 마포구 어울마당로 94'), keyword: '서울 마포구 어울마당로 94' },
+                            { name: 'Brand Market', desc: '女生必逛，服飾按顏色分類，平價充滿少女感。', link: gMap('서울특별시 마포구 동교동 162-10'), keyword: '서울특별시 마포구 동교동 162-10' },
+                            { name: 'ÅLAND 弘大店', desc: '知名服飾 Select Shop，集合年輕潮牌。', link: gMap('서울 마포구 양화로16길 29'), keyword: '서울 마포구 양화로16길 29' },
+                            { name: 'Shoopen 弘大店', desc: '國民平價鞋包店，買靚鞋換上絕不心痛。', link: gMap('서울 마포구 양화로 153'), keyword: '서울 마포구 양화로 153' },
+                            { name: '想走的街', desc: '佈滿無名平價服飾小店，挖掘萬圜女裝。', link: gMap('어울마당로'), keyword: '어울마당로' }
+                        ] },
+                        { time: '20:00 – 21:30', duration: '1.5hr', type: 'food', icon: '🍽️', color: 'bg-cuteOrange text-orange-800 border-2 border-orange-200', title: '弘大區晚餐', desc: '經典推薦美食任選其一。', location: '弘大美食區', routeDesc: null, routeLink: null, subItems: [ 
+                            { name: '小豬儲蓄罐', desc: '全首爾唯一天然石頭烤肉，必食鹽烤豬五花。', link: gMap('서울 마포구 어울마당로 146-1'), keyword: '서울 마포구 어울마당로 146-1' }, 
+                            { name: '大話豬蹄', desc: '人氣老字號，份量大附送刀削麵湯，必食蒜泥豬蹄。', link: gMap('서울 마포구 어울마당로 123-1'), keyword: '서울 마포구 어울마당로 123-1' },
+                            { name: 'Ttobogetji 辣炒年糕', desc: '必食靈魂配菜「奶油大蒜炸薯條」。', link: gMap('서울 마포구 잔다리로6길 34-5'), keyword: '서울 마포구 잔다리로6길 34-5' }
+                        ] }
+                    ]
+                },
+                {
+                    id: 'day2', title: 'Day 2: 平價市場與文青藝術', date: '5月10日 (日)',
+                    events: [
+                        { time: '10:30 – 13:00', duration: '2.5hr', type: 'attraction', icon: '🏛️', color: 'bg-cuteBlue text-blue-800 border-2 border-blue-200', title: '望遠市場尋寶', desc: '孔德站搭地鐵 6 號線前往。體驗地道平價市場。', location: '望遠市場', routeDesc: '地鐵6號線', routeLink: gDir(HOTEL_NAME, 'Mangwon Station', 'transit'), subItems: [
+                            { name: '望遠市場 (水果)', desc: '買極平價的當季新鮮水果如士多啤梨。', link: gMap('서울 마포구 포은로8길 14'), keyword: '서울 마포구 포은로8길 14' },
+                            { name: '故鄉刀削麵', desc: '手工現切麵條，湯頭鮮甜。', link: gMap('서울 마포구 망원로8길 14'), keyword: '서울 마포구 망원로8길 14' },
+                            { name: 'Basak Macha', desc: '必食視覺系甜點「火烤棉花糖雪糕」。', link: gMap('서울 마포구 월드컵로13길 37'), keyword: '서울 마포구 월드컵로13길 37' },
+                            { name: '望遠手工可樂餅', desc: '約 1,000 韓圜一個，必食蔬菜/泡菜口味。', link: gMap('서울 마포구 망원로 80'), keyword: '서울 마포구 망원로 80' },
+                            { name: 'Mangwon Bagok', desc: '包裝高級的韓國傳統手工核桃糕、羊羹。', link: gMap('서울 마포구 월드컵로13길 79'), keyword: '서울 마포구 월드컵로13길 79' },
+                            { name: 'Zero Space', desc: '極具質感的文具與插畫周邊。', link: gMap('서울 마포구 희우정로16길 32'), keyword: '서울 마포구 희우정로16길 32' }
+                        ] },
+                        { time: '13:00 – 16:30', duration: '3.5hr', type: 'shop', icon: '🛍️', color: 'bg-pinkLight text-pinkDark border-2 border-pink-200', title: '延南洞文創散步', desc: '由市場截的士前往。逛文青選物店。', location: '延南洞', routeDesc: '的士', routeLink: gDir('Mangwon Market', 'Yeonnam-dong', 'driving'), subItems: [
+                            { name: 'Made by 延南', desc: '集合獨立插畫家的貼紙、明信片和手機殼。', link: gMap('서울 마포구 연희로 11'), keyword: '서울 마포구 연희로 11' }
+                        ] },
+                        { time: '17:00 – 20:30', duration: '3.5hr', type: 'shop', icon: '🛍️', color: 'bg-pinkLight text-pinkDark border-2 border-pink-200', title: '現代百貨', desc: '由延南洞前往首爾最大室內園林百貨。', location: '汝矣島', routeDesc: '的士/地鐵', routeLink: gDir('Yeonnam-dong', 'The Hyundai Seoul', 'driving'), subItems: [
+                            { name: '熙正食堂', desc: '劉在錫推介 30 年老店，部隊鍋湯頭濃郁。', link: gMap('서울 영등포구 여의나루로 117'), keyword: '서울 영등포구 여의나루로 117' },
+                            { name: '松炭釜山豬蹄', desc: '商場美食街熱門，必食清爽冷蹄肉盤。', link: gMap('The Hyundai Seoul B1'), keyword: 'The Hyundai Seoul' },
+                            { name: 'EGGSLUT', desc: '洛杉磯名店，必吃極致滑嫩的美式炒蛋漢堡。', link: gMap('The Hyundai Seoul B1'), keyword: 'The Hyundai Seoul' }
+                        ] }
+                    ]
+                },
+                {
+                    id: 'day3', title: 'Day 3: 樂天世界與超市掃貨', date: '5月11日 (一)',
+                    events: [
+                        { time: '09:30 – 17:30', duration: '8.0hr', type: 'attraction', icon: '🎢', color: 'bg-cuteBlue text-blue-800 border-2 border-blue-200', title: '樂天世界', desc: '租借高校制服入園，下午到室外「魔幻島」與城堡合照。', location: '蠶室站', routeDesc: '地鐵5轉2號線', routeLink: gDir(HOTEL_NAME, 'Jamsil Station', 'transit') },
+                        { time: '17:30 – 19:00', duration: '1.5hr', type: 'shop', icon: '🛒', color: 'bg-pinkLight text-pinkDark border-2 border-pink-200', title: '購物城及超市採買', desc: '步行至旁邊的 Lotte World Mall。', location: '樂天世界購物城', routeDesc: '步行', routeLink: gDir('Lotte World Seoul', 'Lotte World Mall', 'walking'), subItems: [
+                            { name: 'BUTTER', desc: '馬卡龍色系的可愛商品、辦公室療癒小物。', link: gMap('서울 송파구 올림픽로 300'), keyword: '서울 송파구 올림픽로 300' },
+                            { name: 'CHICOR', desc: '韓國 Sephora，尋找小眾美妝品牌。', link: gMap('서울 송파구 올림픽로 300'), keyword: '서울 송파구 올림픽로 300' },
+                            { name: 'Lotte Mart Zettaplex', desc: '韓國最大旗艦超市，零食種類最齊全。', link: gMap('서울 송파구 올림픽로 240'), keyword: '서울 송파구 올림픽로 240' }
+                        ] },
+                        { time: '19:00 – 20:30', duration: '1.5hr', type: 'food', icon: '🍽️', color: 'bg-cuteOrange text-orange-800 border-2 border-orange-200', title: '松理團路晚餐', desc: '沿石村湖步行前往。', location: '松理團路', routeDesc: '步行', routeLink: gDir('Lotte World Mall', 'Songridan-gil', 'walking'), subItems: [
+                            { name: 'Menya Hanabi (麵屋花火)', desc: '韓國拌麵第一名，必食特製肉燥拌麵。', link: gMap('서울 송파구 백제고분로45길 38'), keyword: '서울 송파구 백제고분로45길 38' },
+                            { name: 'On Hwa', desc: '人氣舒芙蕾，必食如雲朵般的草莓舒芙蕾鬆餅。', link: gMap('서울 송파구 백제고분로45길 15'), keyword: '서울 송파구 백제고분로45길 15' },
+                            { name: 'Byeolmi Gopchang', desc: '油脂香爆棚的高質感烤大腸店，配燒酒一流。', link: gMap('서울 송파구 올림픽로32길 22'), keyword: '서울 송파구 올림픽로32길 22' }
+                        ] }
+                    ]
+                },
+                {
+                    id: 'day4', title: 'Day 4: 聖水洞工業風與猛男 Show', date: '5月12日 (二)',
+                    events: [
+                        { time: '11:00 – 17:30', duration: '6.5hr', type: 'shop', icon: '☕', color: 'bg-pinkLight text-pinkDark border-2 border-pink-200', title: '聖水洞探店', desc: '最潮區域，逛香氛、文青小店與特色 Cafe。', location: '聖水洞', routeDesc: '地鐵5轉2號線', routeLink: gDir(HOTEL_NAME, 'Seongsu Station', 'transit'), subItems: [
+                            { name: '傳聞中的聖水馬鈴薯湯', desc: '白鐘元推介，肉塊極厚實，輕輕一撥就散開。', link: gMap('서울 성동구 연무장길 45'), keyword: '서울 성동구 연무장길 45' },
+                            { name: 'Zesty Saloon', desc: '全首爾最好吃蝦堡，必食芥末蝦肉漢堡。', link: gMap('서울 성동구 서울숲2길 19'), keyword: '서울 성동구 서울숲2길 19' },
+                            { name: 'Grandpa Factory', desc: '巨型工業風樹屋 Cafe，必試 Dirty Einspanner。', link: gMap('서울 성동구 성수이로7가길 9'), keyword: '서울 성동구 성수이로7가길 9' },
+                            { name: 'Tamburins 聖水旗艦店', desc: 'Jennie 代言，必買貝殼香水護手霜。', link: gMap('서울 성동구 연무장5길 8'), keyword: '서울 성동구 연무장5길 8' },
+                            { name: 'Point of View', desc: '首爾最美英倫復古風文具選物店，質感極高。', link: gMap('서울 성동구 연무장길 18'), keyword: '서울 성동구 연무장길 18' },
+                            { name: 'LCDC Seoul', desc: '汽車廠改建，集合本地小眾設計師銀飾與香皂。', link: gMap('서울 성동구 연무장17길 10'), keyword: '서울 성동구 연무장17길 10' }
+                        ] },
+                        { time: '19:30 – 21:20', duration: '1.5hr', type: 'attraction', icon: '🎭', color: 'bg-cuteBlue text-blue-800 border-2 border-blue-200', title: 'Wild Wild Show 猛男秀', desc: '請於 20:00 開演前最少 30 分鐘到達明寶藝術廳換票。', location: '乙支路3街站', routeDesc: '地鐵2號線', routeLink: gDir('Seongsu Station', 'Euljiro 3-ga Station', 'transit'), subItems: [
+                            { name: '明寶藝術廳 (명보아트홀)', desc: '猛男秀演出場地。', link: gMap('서울 중구 마른내로 47'), keyword: '서울 중구 마른내로 47' }
+                        ] },
+                        { time: '21:30 – 深夜', duration: '自由', type: 'food', icon: '🍻', color: 'bg-cuteOrange text-orange-800 border-2 border-orange-200', title: '乙支路布帳馬車宵夜', desc: '感受韓國街頭飲酒文化。', location: '乙支路', routeDesc: null, routeLink: null, subItems: [
+                            { name: '萬船烤肉 (만선호프)', desc: '感受布帳馬車文化，必食烤明太魚乾配生啤。', link: gMap('서울 중구 을지로13길 19'), keyword: '서울 중구 을지로13길 19' }
+                        ] }
+                    ]
+                },
+                {
+                    id: 'day5', title: 'Day 5: 最後衝刺與回程', date: '5月13日 (三)',
+                    events: [
+                        { time: '09:30 – 11:30', duration: '2.0hr', type: 'shop', icon: '🛍️', color: 'bg-pinkLight text-pinkDark border-2 border-pink-200', title: '首爾站最後血拼', desc: '由酒店截的士前往首爾站做最後採買。', location: '首爾站', routeDesc: '的士', routeLink: gDir(HOTEL_NAME, 'Seoul Station', 'driving'), subItems: [
+                            { name: 'Lotte Mart 首爾站店', desc: '提供免費紙箱打包，主攻咖啡、紫菜、泡麵。', link: gMap('서울 중구 한강대로 405'), keyword: '서울 중구 한강대로 405' },
+                            { name: 'Kakao Friends 首爾站店', desc: '韓國獨有「站長版」Ryan 和春植限定紀念品。', link: gMap('Seoul Station KTX'), keyword: 'Kakao Friends Seoul Station' },
+                            { name: 'Olive Young 首爾站店', desc: '離開前最後補漏，買輕便面膜塞行李箱。', link: gMap('서울 중구 한강대로 405 2층'), keyword: '서울 중구 한강대로 405' }
+                        ] },
+                        { time: '11:30 – 12:15', duration: '45min', type: 'food', icon: '🍽️', color: 'bg-cuteOrange text-orange-800 border-2 border-orange-200', title: '首爾站最後午餐', desc: '把握時間享用最後一餐。', location: '首爾站周邊', routeDesc: null, routeLink: null, subItems: [
+                            { name: 'Tokkijung', desc: '出菜快，必食視覺驚艷的奶油咖哩烏冬。', link: gMap('Seoul Station KTX'), keyword: 'Tokkijung Seoul Station' },
+                            { name: '金北順大鍋飯', desc: '傳統家常熱鍋，必食泡菜豬肉鍋。', link: gMap('서울 중구 한강대로 416'), keyword: '서울 중구 한강대로 416' },
+                            { name: 'Paris Baguette', desc: '趕時間首選，買些士多啤梨麵包上車吃。', link: gMap('Seoul Station KTX'), keyword: 'Paris Baguette Seoul Station' }
+                        ] },
+                        { time: '12:15 – 15:25', duration: '3.0hr', type: 'transport', icon: '✈️', color: 'bg-gray-100 text-gray-700 border-2 border-gray-300', title: '前往機場與起飛', desc: '12:15返回孔德站取行李，搭 AREX 前往仁川。15:25 航班起飛。', location: '仁川機場', routeDesc: 'AREX', routeLink: gDir('Gongdeok Station', 'Incheon International Airport', 'transit') }
+                    ]
+                }
+            ],
+            shoppingGuide: [
+                { category: '💄 美妝與藥妝', items: [ { name: 'Olive Young 弘大', desc: '樓高三層旗艦店，可即場退稅。', location: '弘大', link: gMap('서울 마포구 양화로 156'), keyword: '서울 마포구 양화로 156' }, { name: 'CHICOR', desc: '韓國 Sephora，尋找小眾美妝品牌。', location: '蠶室', link: gMap('서울 송파구 올림픽로 300'), keyword: '서울 송파구 올림픽로 300' }, { name: 'Tamburins', desc: 'Jennie 代言香水，必買貝殼護手霜。', location: '聖水洞', link: gMap('서울 성동구 연무장5길 8'), keyword: '서울 성동구 연무장5길 8' } ] },
+                { category: '🎁 精品與手信', items: [ { name: 'POP MART', desc: '巨型夢幻盲盒店，抽 Labubu。', location: '弘大', link: gMap('서울 마포구 홍익로 17'), keyword: '서울 마포구 홍익로 17' }, { name: 'Point of View', desc: '英倫復古風文具選物店。', location: '聖水洞', link: gMap('서울 성동구 연무장길 18'), keyword: '서울 성동구 연무장길 18' }, { name: 'Kakao Friends', desc: '首爾站長版 Ryan 限定紀念品。', location: '首爾站', link: gMap('Seoul Station KTX'), keyword: 'Kakao Friends Seoul Station' } ] },
+                { category: '👗 服飾與雜貨', items: [ { name: 'M Playground', desc: '弘大地標藍色貨櫃，極平價休閒。', location: '弘大', link: gMap('서울 마포구 어울마당로 94'), keyword: '서울 마포구 어울마당로 94' }, { name: 'Brand Market', desc: '女生必逛，按顏色分類少女服飾。', location: '弘大', link: gMap('서울특별시 마포구 동교동 162-10'), keyword: '서울특별시 마포구 동교동 162-10' }, { name: 'BUTTER', desc: '馬卡龍色可愛雜貨、辦公室療癒物。', location: '蠶室', link: gMap('서울 송파구 올림픽로 300'), keyword: '서울 송파구 올림픽로 300' } ] },
+                { category: '🛒 超市與傳統市場', items: [ { name: '望遠市場', desc: '平價買當季新鮮水果。', location: '望遠洞', link: gMap('서울 마포구 포은로8길 14'), keyword: '서울 마포구 포은로8길 14' }, { name: 'Lotte Mart Zettaplex', desc: '韓國最大旗艦超市，零食最齊。', location: '蠶室', link: gMap('서울 송파구 올림픽로 240'), keyword: '서울 송파구 올림픽로 240' }, { name: 'Lotte Mart 首爾站', desc: '提供免費紙箱打包。', location: '首爾站', link: gMap('서울 중구 한강대로 405'), keyword: '서울 중구 한강대로 405' } ] }
+            ],
+            foodGuide: [
+                { location: '弘大/延南周邊', items: [ { name: '小豬儲蓄罐', desc: '天然石頭烤肉，必食鹽烤豬五花。', link: gMap('서울 마포구 어울마당로 146-1'), keyword: '서울 마포구 어울마당로 146-1' }, { name: '大話豬蹄', desc: '人氣老字號，必食蒜泥豬蹄。', link: gMap('서울 마포구 어울마당로 123-1'), keyword: '서울 마포구 어울마당로 123-1' }, { name: 'Ttobogetji', desc: '辣炒年糕配奶油大蒜炸薯條。', link: gMap('서울 마포구 잔다리로6길 34-5'), keyword: '서울 마포구 잔다리로6길 34-5' } ] },
+                { location: '望遠市場周邊', items: [ { name: '故鄉刀削麵', desc: '手工現切麵條。', link: gMap('서울 마포구 망원로8길 14'), keyword: '서울 마포구 망원로8길 14' }, { name: 'Basak Macha', desc: '火烤棉花糖雪糕。', link: gMap('서울 마포구 월드컵로13길 37'), keyword: '서울 마포구 월드컵로13길 37' }, { name: '望遠手工可樂餅', desc: '平價必食蔬菜/泡菜可樂餅。', link: gMap('서울 마포구 망원로 80'), keyword: '서울 마포구 망원로 80' } ] },
+                { location: '松理團路/汝矣島', items: [ { name: 'Menya Hanabi', desc: '韓國拌麵第一名，特製肉燥拌麵。', link: gMap('서울 송파구 백제고분로45길 38'), keyword: '서울 송파구 백제고분로45길 38' }, { name: 'On Hwa', desc: '草莓舒芙蕾鬆餅。', link: gMap('서울 송파구 백제고분로45길 15'), keyword: '서울 송파구 백제고분로45길 15' }, { name: '熙正食堂', desc: '劉在錫推介 30 年老店部隊鍋。', link: gMap('서울 영등포구 여의나루로 117'), keyword: '서울 영등포구 여의나루로 117' } ] },
+                { location: '聖水洞/乙支路', items: [ { name: '聖水馬鈴薯湯', desc: '白鐘元推介，肉塊極厚實。', link: gMap('서울 성동구 연무장길 45'), keyword: '서울 성동구 연무장길 45' }, { name: 'Zesty Saloon', desc: '全首爾最好吃蝦堡。', link: gMap('서울 성동구 서울숲2길 19'), keyword: '서울 성동구 서울숲2길 19' }, { name: '萬船烤肉', desc: '布帳馬車，烤明太魚乾配生啤。', link: gMap('서울 중구 을지로13길 19'), keyword: '서울 중구 을지로13길 19' } ] }
+            ],
+            checklistData: {
+                categories: [
+                    { title: "📁 證件與重要物品", items: [ { id: "c1", text: "特區護照 (最少 6 個月有效期)" }, { id: "c2", text: "香港身份證" }, { id: "c3", text: "實體信用卡 (免海外手續費)" }, { id: "c4", text: "港幣現金 ($500/$1000 兌換用)" } ] },
+                    { title: "🔌 電子產品與用品", items: [ { id: "c7", text: "兩腳圓頭旅行轉插 (最少 2 個)" }, { id: "c9", text: "大容量尿袋及充電線" }, { id: "c17", text: "牙刷、牙膏、洗面乳 (酒店無提供!)" } ] },
+                    { title: "🛍️ 購物神隊友", items: [ { id: "c22", text: "大容量摺疊環保袋 (當手提行李上機用)" } ] }
+                ]
+            },
+            transportGuide: [
+                { id: "t1", day: "Day 1", title: "抵達及市區", origin: "仁川機場", dest: "孔德站", mode: "transit", time: "約 55 分鐘", desc: "機場快線 (AREX) 一般列車：毋須轉車，直達「孔德站」。從 1 號出口步行約 5-8 分鐘即可抵達酒店。" },
+                { id: "t2", day: "Day 1", title: "美妝血拼", origin: "孔德站", dest: "弘大入口站", mode: "transit", time: "約 10 分鐘", desc: "首選-地鐵：乘搭「AREX 或 京義中央線」往弘大入口站（只需 1 個站，車程 3 分鐘），避免傍晚的士塞車。" },
+                { id: "t3", day: "Day 2", title: "市場覓食", origin: "孔德站", dest: "望遠站", mode: "transit", time: "約 15 分鐘", desc: "地鐵：孔德站乘搭「地鐵 6 號線」至「望遠站」，從 2 號出口步行約 5 分鐘。" },
+                { id: "t4", day: "Day 2", title: "漢江與文青區", origin: "望遠市場", dest: "延南洞", mode: "driving", time: "約 10 分鐘", desc: "的士：兩地距離較近但無直接地鐵相連，直接截的士前往延南洞 (弘大站 3 號出口方向) 最方便。" },
+                { id: "t5", day: "Day 3", title: "主題樂園", origin: "麻浦站", dest: "蠶室站", mode: "transit", time: "約 45 分鐘", desc: "地鐵：從酒店步行至「麻浦站」，乘搭「地鐵 5 號線」至「忠正路站」，轉乘「地鐵 2 號線」直達「蠶室站」。" },
+                { id: "t6", day: "Day 3", title: "樂園後晚餐", origin: "樂天世界", dest: "松理團路", mode: "walking", time: "約 15 分鐘", desc: "步行：沿著石村湖畔步行即可抵達松理團路一帶，沿途風景極佳。" },
+                { id: "t7", day: "Day 4", title: "工業風打卡", origin: "孔德站", dest: "聖水站", mode: "transit", time: "約 40 分鐘", desc: "地鐵：從「孔德站」乘搭「地鐵 5 號線」至「往十里站」，轉乘「地鐵 2 號線」至「聖水站」。" },
+                { id: "t8", day: "Day 4", title: "猛男Show", origin: "聖水站", dest: "乙支路3街站", mode: "transit", time: "約 15 分鐘", desc: "地鐵：於「聖水站」乘搭「地鐵 2 號線」，毋須轉車，直達「乙支路3街站」。從 8 號出口步行約 2 分鐘即達劇場。" },
+                { id: "t9", day: "Day 5", title: "買手信及回程", origin: "孔德站", dest: "首爾站", mode: "transit", time: "約 10 分鐘", desc: "地鐵/的士：乘搭「AREX 或京義中央線」至「首爾站」。採買後再搭地鐵回孔德站酒店拿行李去機場。" }
+            ]
+        };
+
+        let appData = JSON.parse(localStorage.getItem('seoulTripDataV4'));
+        if (!appData) {
+            appData = JSON.parse(JSON.stringify(defaultData));
+            localStorage.setItem('seoulTripDataV4', JSON.stringify(appData));
+        }
+
+        function saveAppData() { localStorage.setItem('seoulTripDataV4', JSON.stringify(appData)); }
+
+        function resetData() {
+            if(confirm("確定要恢復預設的完美行程嗎？您自己新增與修改的項目都會消失喔！")) {
+                localStorage.removeItem('seoulTripDataV4');
+                appData = JSON.parse(JSON.stringify(defaultData));
+                switchTab('overview'); alert("已成功載入最新版預設行程！");
+            }
+        }
+
+        let currentTab = 'overview';
+
+        async function fetchWeather() {
+            const widget = document.getElementById('weatherWidget');
+            try {
+                const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=37.5665&longitude=126.9780&current_weather=true&timezone=Asia%2FSeoul');
+                const data = await res.json();
+                const temp = Math.round(data.current_weather.temperature);
+                const code = data.current_weather.weathercode;
+                
+                let emoji = '🌤️';
+                if (code === 0) emoji = '☀️'; else if (code <= 3) emoji = '⛅'; else if (code <= 48) emoji = '🌫️'; else if (code <= 67) emoji = '🌧️'; else if (code <= 77) emoji = '❄️'; else if (code <= 82) emoji = '⛈️'; else emoji = '⚡'; 
+
+                widget.innerHTML = `<span class="text-base">${emoji}</span> 首爾 ${temp}°C`;
+                widget.classList.remove('animate-pulse'); widget.classList.add('bg-white');
+            } catch (error) { widget.innerHTML = '🌤️ 天氣未更新'; widget.classList.remove('animate-pulse'); }
+        }
+
+function renderOverview() {
+            const container = document.getElementById('contentArea');
+            container.innerHTML = `
+                <div class="animate-fade-in space-y-6">
+                    <!-- Top Banner -->
+                    <div class="cute-banner">
+                        <span class="cute-banner-icon">
+                            <svg class="w-12 h-12" viewBox="0 0 48 48" fill="none">
+                                <path d="M24 4C13 4 6 12 6 22c0 14 18 22 18 22s18-8 18-22C42 12 35 4 24 4z" fill="#BDE0FE" stroke="#FFB6C1" stroke-width="2"/>
+                                <path d="M20 20l4 8 8-12" stroke="#FF8DA1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <div class="cute-banner-text">
+                            <h3>首爾閨蜜五天四夜之旅</h3>
+                            <p>5月9日 - 5月13日 | 留下難忘回憶</p>
+                        </div>
+                    </div>
+
+                    <div class="cute-card p-6 relative">
+                        <button onclick="resetData()" class="absolute top-4 right-4 text-xs font-bold text-gray-400 bg-gray-100 px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
+                            恢復預設
+                        </button>
+                        <h2 class="text-2xl font-cute font-bold text-pinkMain mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#FFB6C1"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                            行程小筆記
+                        </h2>
+                        <div class="flex items-start gap-3 mb-4 bg-pinkLight/40 p-3 rounded-2xl">
+                            <svg class="w-8 h-8 text-pink-500 mt-1" viewBox="0 0 48 48" fill="none">
+                                <rect x="8" y="12" width="32" height="28" rx="4" fill="#E8DFF5" stroke="#FFB6C1" stroke-width="2"/>
+                                <path d="M16 12V8a4 4 0 018 0v4M8 20h32M8 28h24" stroke="#FFB6C1" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="34" cy="34" r="6" fill="#FF8DA1"/>
+                            </svg>
+                            <div class="flex-1">
+                                <p class="text-xs text-pinkDark font-bold tracking-wider mb-0.5">我們的秘密基地</p>
+                                <p class="text-textBrown font-bold text-sm">${appData.overview.hotel}</p>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=Roynet+Hotel+Seoul+Mapo" target="_blank" class="mt-2 inline-flex items-center gap-1.5 text-xs text-pinkMain bg-white px-3 py-1.5 rounded-full border-2 border-pinkBorder hover:bg-pinkLight transition-colors font-bold shadow-sm">
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                                    查看地圖・導航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-cuteBlue/20 p-3 rounded-2xl">
+                            <svg class="w-8 h-8 text-blue-500 mt-1" viewBox="0 0 48 48" fill="none">
+                                <path d="M24 6L8 14v8c0 10 8 18 16 20 8-2 16-10 16-20v-8L24 6z" fill="#BDE0FE" stroke="#5D9ECE" stroke-width="2"/>
+                                <path d="M24 18v8M20 22h8" stroke="#5D9ECE" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                            <div><p class="text-xs text-blue-500 font-bold tracking-wider mb-0.5">航班時間</p><p class="text-textBrown font-bold text-sm">${appData.overview.flights}</p></div>
+                        </div>
+                    </div>
+
+                    <div class="hand-divider"><span>
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#FFB6C1"><path d="M12 2l2.4 7.4h7.6l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z"/></svg>
+                    </span></div>
+
+                    <button onclick="switchTab('lotteworld')" class="w-full cute-card p-4 flex items-center justify-between bg-purple-50 hover:bg-purple-100 transition-colors border-purple-200 shadow-[4px_4px_0px_#E9D5FF] group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm border-2 border-purple-200 group-hover:scale-110 transition-transform icon-jelly">
+                                <svg class="w-7 h-7 text-purple-500" viewBox="0 0 48 48" fill="none">
+                                    <circle cx="24" cy="24" r="18" stroke="#9333EA" stroke-width="2.5" fill="#E9D5FF"/>
+                                    <path d="M24 10v4M24 34v4M10 24h4M34 24h4" stroke="#9333EA" stroke-width="2.5" stroke-linecap="round"/>
+                                    <circle cx="24" cy="24" r="6" fill="#9333EA"/>
+                                </svg>
+                            </div>
+                            <div class="text-left">
+                                <h3 class="font-cute text-xl font-bold text-purple-700">樂天世界閨蜜攻城指南</h3>
+                                <p class="text-xs text-purple-500 font-bold mt-0.5">App下載 / 遊玩路線 / 拍攝建議</p>
+                            </div>
+                        </div>
+                        <svg class="w-6 h-6 text-purple-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+
+                    <div class="hand-divider"><span>
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#FFB6C1"><circle cx="12" cy="12" r="8"/></svg>
+                    </span></div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="switchTab('transport')" class="cute-card p-5 flex flex-col items-center justify-center gap-3 hover:bg-blue-50 transition-colors border-blue-200 shadow-[4px_4px_0px_#BDE0FE]">
+                            <svg class="w-10 h-10 text-blue-500" viewBox="0 0 48 48" fill="none">
+                                <rect x="6" y="14" width="36" height="20" rx="4" fill="#BDE0FE" stroke="#3B82F6" stroke-width="2.5"/>
+                                <circle cx="14" cy="34" r="4" fill="#3B82F6"/>
+                                <circle cx="34" cy="34" r="4" fill="#3B82F6"/>
+                                <path d="M6 22h36M14 14V10M34 14V10" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                            <span class="font-cute text-lg font-bold text-blue-600">交通指南</span>
+                        </button>
+                        <button onclick="switchTab('shopping')" class="cute-card p-5 flex flex-col items-center justify-center gap-3 hover:bg-pink-50 transition-colors border-pinkBorder shadow-[4px_4px_0px_#FFB6C1]">
+                            <svg class="w-10 h-10 text-pinkMain" viewBox="0 0 48 48" fill="none">
+                                <path d="M12 12h30l-3 24a4 4 0 01-4 4H19a4 4 0 01-4-4L12 12z" fill="#FFE4E8" stroke="#FF8DA1" stroke-width="2.5"/>
+                                <path d="M18 12V8a6 6 0 1112 0v4" stroke="#FF8DA1" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                            <span class="font-cute text-lg font-bold text-pinkMain">購物清單</span>
+                        </button>
+                        <button onclick="switchTab('food')" class="cute-card p-5 flex flex-col items-center justify-center gap-3 hover:bg-orange-50 transition-colors border-orange-200 shadow-[4px_4px_0px_#FFDAC1]">
+                            <svg class="w-10 h-10 text-orange-500" viewBox="0 0 48 48" fill="none">
+                                <path d="M8 16v20a4 4 0 004 4h24a4 4 0 004-4V16" fill="#FFDAC1" stroke="#F97316" stroke-width="2.5"/>
+                                <path d="M6 16h36" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M16 8c0-2 2-4 8-4s8 2 8 4" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                            <span class="font-cute text-lg font-bold text-orange-500">美食指南</span>
+                        </button>
+                        <button onclick="switchTab('checklist')" class="cute-card p-5 flex flex-col items-center justify-center gap-3 hover:bg-teal-50 transition-colors border-teal-200 shadow-[4px_4px_0px_#99F6E4]">
+                            <svg class="w-10 h-10 text-teal-500" viewBox="0 0 48 48" fill="none">
+                                <rect x="8" y="8" width="32" height="36" rx="4" fill="#99F6E4" stroke="#14B8A6" stroke-width="2.5"/>
+                                <path d="M16 20l6 6 12-12" stroke="#14B8A6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="font-cute text-lg font-bold text-teal-600">出發清單</span>
+                        </button>
+                    </div>
+
+                    <div class="hand-divider"><span>
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#FFB6C1"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    </span></div>
+
+                    <div class="cute-card p-6 border-pink-300 bg-pink-50/50">
+                        <h2 class="text-xl font-cute font-bold text-pinkMain mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#FF8DA1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm0-4h-2V7h2v8z"/></svg>
+                            專家防伏小貼士
+                        </h2>
+                        <ul class="list-disc pl-5 text-sm font-medium text-textBrown space-y-3">
+                            <li><strong>🛂 必備護照正本：</strong> 即場退稅或睇 Wild Wild Show (嚴格核對年齡且禁拍) 必須出示實體護照，相片無效！</li>
+                            <li><strong>⚠️ 潮玩防伏：</strong> 買 Labubu 等熱門盲盒，強烈建議只在 POP MART 官方店買，避開街頭炒價與高仿貨。</li>
+                            <li><strong>🍽️ 現代百貨免排隊：</strong> 熱門餐廳午市要等 1-2 小時。到商場請先找餐廳門口的平板 (CatchTable) 取號再去行街。</li>
+                            <li><strong>🥩 餐廳潛規則：</strong> 烤肉店首單同款肉通常需「起跳 2 份」；Cafe 嚴格規定「一人一杯飲品」；小菜免費但浪費會罰款。</li>
+                            <li><strong>🚕 交通與行李大魔王：</strong> Day 5 推大行李在首爾站轉車是地獄，按計劃回孔德站搭 AREX 最醒目！4人帶大行李普通的士會拒載，必用 Kakao T 呼叫大型的士 (Venti)。</li>
+                        </ul>
+                        <p class="text-xs text-pinkDark font-bold mt-4 pt-3 border-t border-pink-200">✨ 保持彈性，買得開心！遇難題多用 Papago 圖片翻譯。祝你們滿載而歸！</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderDay(dayId) {
+            const dayData = appData.days.find(d => d.id === dayId);
+            const container = document.getElementById('contentArea');
+            const dayIcons = { day1: '🛫', day2: '🌸', day3: '🎢', day4: '🌙', day5: '🛍️' };
+            const dayBanners = {
+                day1: { title: 'Day 1 抵達與初探', desc: '入境・酒店・弘大血拼' },
+                day2: { title: 'Day 2 文青市場遊', desc: '望遠市場・延南洞・現代百貨' },
+                day3: { title: 'Day 3 樂天世界日', desc: '主題樂園・超市掃貨・松理團路' },
+                day4: { title: 'Day 4 聖水洞打卡', desc: '工業風 Café・猛男 Show・布帳馬車' },
+                day5: { title: 'Day 5 最終日', desc: '最後血拼・回程' }
+            };
+            let html = `
+                <div class="animate-fade-in pb-10">
+                    <!-- Day Banner -->
+                    <div class="cute-banner">
+                        <span class="cute-banner-icon">
+                            ${dayId === 'day1' ? '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><path d="M40 12L24 4 8 12v8l16 6 16-6v-8z" fill="#BDE0FE" stroke="#FFB6C1" stroke-width="2"/><path d="M8 20v16l16 8 16-8V20" fill="#FFE4E8" stroke="#FF8DA1" stroke-width="2"/><path d="M24 28v12" stroke="#FF8DA1" stroke-width="2"/></svg>' :
+                              dayId === 'day2' ? '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" fill="#E8DFF5" stroke="#9333EA" stroke-width="2"/><path d="M24 14v10l7 7" stroke="#9333EA" stroke-width="2.5" stroke-linecap="round"/></svg>' :
+                              dayId === 'day3' ? '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" fill="#FFDAC1" stroke="#F97316" stroke-width="2"/><path d="M24 10v4M24 34v4M10 24h4M34 24h4" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="24" r="5" fill="#F97316"/></svg>' :
+                              dayId === 'day4' ? '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" fill="#99F6E4" stroke="#14B8A6" stroke-width="2"/><path d="M18 20l4 4 8-8M18 28l4 4 8-8" stroke="#14B8A6" stroke-width="2.5" stroke-linecap="round"/></svg>' :
+                              '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><path d="M12 12h24l-3 24a4 4 0 01-4 4H19a4 4 0 01-4-4L12 12z" fill="#FFE4E8" stroke="#FF8DA1" stroke-width="2"/><path d="M18 12V8a6 6 0 0112 0v4" stroke="#FF8DA1" stroke-width="2.5" stroke-linecap="round"/></svg>'}
+                        </span>
+                        <div class="cute-banner-text">
+                            <h3>${dayBanners[dayId]?.title || dayData.title}</h3>
+                            <p>${dayBanners[dayId]?.desc || dayData.date}</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-6">
+                        <p class="text-pinkDark font-bold text-sm bg-pinkLight/60 inline-block px-4 py-1.5 rounded-full border-2 border-pinkBorder flex items-center gap-1.5">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2" fill="none"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                            ${dayData.date}
+                        </p>
+                    </div>
+                    <div class="relative pt-2 pl-5">
+            `;
+            dayData.events.forEach((event, index) => {
+                let subItemsHtml = '';
+                if (event.subItems && event.subItems.length > 0) {
+                    subItemsHtml = `<div class="mt-4 pt-4 border-t-2 border-dashed border-gray-200 space-y-3">`;
+                    event.subItems.forEach(item => {
+                        subItemsHtml += `
+                            <div class="flex justify-between items-center bg-gray-50/80 p-2.5 rounded-2xl">
+                                <div class="pl-1"><p class="text-sm font-bold text-textBrown">${item.name}</p><p class="text-[11px] text-gray-500 font-medium">${item.desc}</p></div>
+                                ${item.link ? `<a href="${item.link}" target="_blank" class="p-2 bg-white border-2 border-pinkBorder text-pinkMain rounded-full shadow-sm hover:bg-pinkLight transition-colors flex-shrink-0"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg></a>` : ''}
+                            </div>`;
+                    });
+                    subItemsHtml += `</div>`;
+                }
+                html += `
+                    <div class="timeline-item relative mb-10">
+                        <div class="timeline-line"></div>
+                        <div class="flex gap-4">
+                            <div class="relative z-10 flex flex-col items-center mt-2"><div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl shadow-sm ${event.color} z-10 bg-white icon-jelly">${event.icon}</div></div>
+                            <div class="cute-card p-5 flex-1 relative overflow-hidden group">
+                                <div class="action-btns absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-1 border-2 border-pinkLight">
+                                    <button onclick="openEditEventModal('${dayId}', ${index})" class="text-blue-400 hover:text-blue-600 hover:bg-blue-50 rounded-full p-1.5 transition-colors" title="編輯"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg></button>
+                                    <button onclick="deleteEvent('${dayId}', ${index})" class="text-red-400 hover:text-red-600 hover:bg-red-50 rounded-full p-1.5 transition-colors" title="刪除"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button>
+                                </div>
+                                ${event.duration ? `<div class="absolute top-0 right-24 bg-pinkLight text-pinkDark text-[10px] px-2 py-1 rounded-bl-xl font-bold border-b-2 border-l-2 border-pinkBorder opacity-80">約 ${event.duration}</div>` : ''}
+                                <div class="mb-1 text-sm font-bold text-gray-400 font-cute text-lg">${event.time}</div>
+                                <h3 class="text-xl font-bold text-textBrown mb-1.5 pr-16 leading-tight">${event.title}</h3>
+                                ${event.location ? `<div class="flex items-center gap-1.5 text-sm text-pinkMain font-bold mb-3 bg-pinkLight/30 w-fit px-2 py-1 rounded-lg">📍 ${event.location}</div>` : ''}
+                                <p class="text-textBrown/80 text-sm leading-relaxed font-medium">${event.desc}</p>
+                                ${event.routeLink ? `<a href="${event.routeLink}" target="_blank" class="mt-4 flex items-center gap-2 text-sm text-pinkDark bg-pinkLight/50 border-2 border-pinkLight px-4 py-2 rounded-2xl font-bold hover:bg-pinkLight transition-colors w-fit"><span>🚀 帶我去：${event.routeDesc || '點擊導航'}</span></a>` : ''}
+                                ${subItemsHtml}
+                            </div>
+                        </div>
+                    </div>`;
+            });
+            html += `
+                    <div class="ml-16 mt-6">
+                        <button onclick="openAddEventModal('${dayId}')" class="w-full py-4 border-4 border-dashed border-pinkBorder bg-white/50 text-pinkDark rounded-3xl font-cute text-lg font-bold hover:bg-pinkLight/50 hover:border-pinkDark transition-all flex items-center justify-center gap-2">
+                            <span class="text-2xl leading-none">+</span> 新增行程
+                        </button>
+                    </div></div></div>`;
+            container.innerHTML = html;
+        }
+
+        function renderGuide(type) {
+            const container = document.getElementById('contentArea');
+            const isShop = type === 'shopping'; const data = isShop ? appData.shoppingGuide : appData.foodGuide;
+            const title = isShop ? '🛍️ 購物必買戰利品' : '🍽️ 絕對要吃的美食';
+            const colorMain = isShop ? 'text-pinkMain' : 'text-orange-500';
+            const shadowColor = isShop ? 'shadow-[4px_4px_0px_#FFB6C1]' : 'shadow-[4px_4px_0px_#FFD8A8]';
+            const borderColor = isShop ? 'border-pinkBorder' : 'border-orange-300';
+            const addBtnColor = isShop ? 'text-pinkMain bg-pink-50 hover:bg-pink-100 border-pinkBorder' : 'text-orange-500 bg-orange-50 hover:bg-orange-100 border-orange-300';
+            
+            let html = `<div class="animate-fade-in pb-10">
+                        <!-- Guide Banner -->
+                        <div class="cute-banner">
+                            <span class="cute-banner-icon">
+                                ${isShop ?
+                                    '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><path d="M10 14h34l-4 28a4 4 0 01-4 4H18a4 4 0 01-4-4L10 14z" fill="#FFE4E8" stroke="#FF8DA1" stroke-width="2.5"/><path d="M18 14V10a8 8 0 0116 0v4" stroke="#FF8DA1" stroke-width="2.5" stroke-linecap="round"/></svg>' :
+                                    '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><path d="M8 18v22a4 4 0 004 4h24a4 4 0 004-4V18" fill="#FFDAC1" stroke="#F97316" stroke-width="2.5"/><path d="M6 18h36" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/><path d="M18 10c0-3 3-6 10-6s10 3 10 6" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/></svg>'
+                                }
+                            </span>
+                            <div class="cute-banner-text">
+                                <h3>${title}</h3>
+                                <p>${isShop ? '精選店鋪・必買清單・購物攻略' : '美食推薦・當地人氣・不可錯過'}</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8">`;
+            data.forEach((cat, catIndex) => {
+                const catTitle = isShop ? cat.category : `📍 ${cat.location}`;
+                html += `<div class="cute-card border-${isShop ? 'pink' : 'orange'}-200 p-5"><div class="inline-block bg-${isShop ? 'pink' : 'orange'}-100 px-4 py-1.5 rounded-full mb-5 border-2 border-${isShop ? 'pink' : 'orange'}-200"><h3 class="text-lg font-cute font-bold ${colorMain}">${catTitle}</h3></div><div class="grid grid-cols-1 md:grid-cols-2 gap-4">`;
+                cat.items.forEach((item, itemIndex) => {
+                    html += `
+                            <div class="bg-gray-50/80 p-4 rounded-2xl border-2 border-transparent hover:border-${isShop ? 'pink' : 'orange'}-200 transition-colors relative group flex flex-col justify-between h-full">
+                                <div class="action-btns absolute top-2 right-2 bg-white/80 backdrop-blur-sm rounded-full p-1 border border-gray-200">
+                                    <button onclick="openEditGuideModal('${type}', ${catIndex}, ${itemIndex})" class="text-blue-400 hover:text-blue-600 hover:bg-blue-50 rounded-full p-1 transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg></button>
+                                    <button onclick="deleteGuideItem('${type}', ${catIndex}, ${itemIndex})" class="text-red-400 hover:text-red-600 hover:bg-red-50 rounded-full p-1 transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button>
+                                </div>
+                                <div>
+                                    <div class="inline-block bg-white text-xs px-2 py-1 rounded-lg text-gray-500 font-bold border-2 border-gray-100 mb-2 shadow-sm mr-16">${isShop ? item.location : item.name}</div>
+                                    <h4 class="font-bold text-textBrown mb-1 text-base pr-6">${item.name}</h4>
+                                    <p class="text-sm text-textBrown/70 mb-3 font-medium leading-relaxed">${item.desc}</p>
+                                </div>
+                                <div class="mt-auto pt-3 flex justify-end">
+                                    <a href="${item.link}" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-white font-bold bg-${isShop ? 'pinkMain' : 'orange-400'} px-3 py-2 rounded-xl hover:opacity-80 transition-opacity shadow-sm"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg> 導航</a>
+                                </div>
+                            </div>`;
+                });
+                html += `<button onclick="openAddGuideModal('${type}', ${catIndex})" class="min-h-[120px] rounded-2xl border-2 border-dashed ${addBtnColor} flex flex-col items-center justify-center gap-1 transition-all hover:scale-[0.98]"><span class="text-2xl font-bold">+</span><span class="font-bold text-sm">新增地點</span></button></div></div>`;
+            });
+            html += `</div></div>`; container.innerHTML = html;
+        }
+
+        function renderChecklist() {
+            const container = document.getElementById('contentArea');
+            let html = `<div class="animate-fade-in pb-10">
+                        <!-- Checklist Banner -->
+                        <div class="cute-banner">
+                            <span class="cute-banner-icon">
+                                <svg class="w-12 h-12" viewBox="0 0 48 48" fill="none">
+                                    <rect x="8" y="6" width="32" height="38" rx="4" fill="#99F6E4" stroke="#14B8A6" stroke-width="2.5"/>
+                                    <path d="M16 22l6 6 12-12" stroke="#14B8A6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 32l6 6 12-12" stroke="#14B8A6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+                                </svg>
+                            </span>
+                            <div class="cute-banner-text">
+                                <h3>出發前終極清單</h3>
+                                <p>確認萬無一失・快快樂樂出發</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">`;
+            appData.checklistData.categories.forEach((category, catIndex) => {
+                html += `<div class="cute-card overflow-hidden"><div class="bg-pinkLight/50 px-5 py-3 border-b-2 border-pinkBorder flex justify-between items-center"><h4 class="font-cute text-lg font-bold text-pinkDark">${category.title}</h4><div class="flex gap-1"><button onclick="openEditChecklistCatModal(${catIndex})" class="text-blue-400 hover:text-blue-600 bg-white/60 hover:bg-blue-50 rounded-full p-1.5 transition-colors border border-blue-200"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg></button><button onclick="deleteChecklistCategory(${catIndex})" class="text-red-400 hover:text-red-600 bg-white/60 hover:bg-red-50 rounded-full p-1.5 transition-colors border border-red-200"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button></div></div><div class="p-4 space-y-3">`;
+                category.items.forEach((item, itemIndex) => { html += `<label class="flex items-start gap-3 p-2 rounded-xl hover:bg-pinkLight/30 cursor-pointer group"><input type="checkbox" id="${item.id}" class="cb-custom checklist-box mt-0.5 flex-shrink-0" onchange="handleCheck(this)"><span class="text-sm text-textBrown font-medium select-none transition-all item-text leading-relaxed flex-1">${item.text}</span><button onclick="openEditChecklistItemModal(${catIndex}, ${itemIndex})" class="text-blue-400 hover:text-blue-600 opacity-0 group-hover:opacity-100 bg-blue-50 rounded-full p-1 transition-all"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg></button><button onclick="deleteChecklistItem(${catIndex}, ${itemIndex})" class="text-red-400 hover:text-red-600 opacity-0 group-hover:opacity-100 bg-red-50 rounded-full p-1 transition-all"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button></label>`; });
+                html += `</div><button onclick="openAddChecklistItemModal(${catIndex})" class="w-full py-2 border-2 border-dashed border-teal-200 text-teal-500 font-bold text-sm hover:bg-teal-50 transition-colors flex items-center justify-center gap-1"><span>+</span> 新增物品</button></div>`;
+                html += `<div class="hand-divider"><span>📋</span></div>`;
+            });
+            html += `<button onclick="openAddChecklistCatModal()" class="w-full py-4 border-4 border-dashed border-teal-200 bg-white/50 text-teal-500 rounded-3xl font-cute text-lg font-bold hover:bg-teal-50 transition-all flex items-center justify-center gap-2"><span class="text-2xl">+</span> 新增分類</button>`;
+            html += `</div></div>`; container.innerHTML = html; loadChecklistState();
+        }
+
+        function renderTransport() {
+            const container = document.getElementById('contentArea');
+            let html = `<div class="animate-fade-in pb-10">
+                        <!-- Transport Banner -->
+                        <div class="cute-banner">
+                            <span class="cute-banner-icon">
+                                <svg class="w-12 h-12" viewBox="0 0 48 48" fill="none">
+                                    <rect x="6" y="12" width="36" height="22" rx="4" fill="#BDE0FE" stroke="#3B82F6" stroke-width="2.5"/>
+                                    <circle cx="14" cy="34" r="4" fill="#3B82F6"/>
+                                    <circle cx="34" cy="34" r="4" fill="#3B82F6"/>
+                                    <path d="M6 20h36M14 12V8M34 12V8" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+                                    <rect x="10" y="16" width="8" height="6" rx="1" fill="#3B82F6" opacity="0.3"/>
+                                </svg>
+                            </span>
+                            <div class="cute-banner-text">
+                                <h3>首爾交通攻略</h3>
+                                <p>地鐵・巴士・步行・各類路線一目了然</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8">`;
+            const daysArr = ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5'];
+            daysArr.forEach(dayName => {
+                const dayRoutes = appData.transportGuide.filter(t => t.day === dayName); if (dayRoutes.length === 0) return;
+                html += `<div><div class="inline-block bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full mb-4 border-2 border-blue-200 shadow-sm"><h3 class="text-lg font-cute font-bold">${dayName} 路線</h3></div><div class="space-y-4">`;
+                dayRoutes.forEach((route, index) => {
+                    let modeIcon = route.mode === 'driving' ? '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17a2 2 0 100-4 2 2 0 000 4zM17 17a2 2 0 100-4 2 2 0 000 4zM5 9h14l-1.5-5H6.5L5 9zM5 9l-2 8h18l-2-8"/></svg>' : (route.mode === 'walking' ? '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="4" r="2"/><path d="M15 22V18l-3-3 3-3v-2M9 18l-3-3 3-3"/></svg>' : '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="6" width="14" height="10" rx="2"/><path d="M8 6V4M16 6V4M4 11h14"/></svg>'); let modeColor = route.mode === 'driving' ? 'text-yellow-600 bg-yellow-50 border-yellow-200' : (route.mode === 'walking' ? 'text-green-600 bg-green-50 border-green-200' : 'text-blue-600 bg-blue-50 border-blue-200'); const globalIndex = appData.transportGuide.findIndex(t => t.id === route.id); const navLink = gDir(route.origin, route.dest, route.mode);
+                    html += `
+                        <div class="cute-card border-blue-200 p-4 relative group">
+                            <div class="action-btns absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-1 border-2 border-blue-100"><button onclick="openEditTransportModal(${globalIndex})" class="text-blue-400 hover:text-blue-600 hover:bg-blue-50 rounded-full p-1.5 transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg></button><button onclick="deleteTransport(${globalIndex})" class="text-red-400 hover:text-red-600 hover:bg-red-50 rounded-full p-1.5 transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button></div>
+                            <div class="flex justify-between items-start mb-3 pr-16"><h4 class="font-bold text-textBrown text-lg">${route.title}</h4><span class="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded-lg shrink-0 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                ${route.time}</span></div>
+                            <div class="flex items-center w-full px-2 mb-4"><div class="flex flex-col items-center min-w-[70px]"><div class="transport-dot"></div><span class="text-xs font-bold text-textBrown mt-1 text-center">${route.origin}</span></div><div class="transport-line"></div><div class="flex flex-col items-center"><div class="text-xl -mt-4 bg-white px-2">${modeIcon}</div></div><div class="transport-line"></div><div class="flex flex-col items-center min-w-[70px]"><div class="transport-dot"></div><span class="text-xs font-bold text-textBrown mt-1 text-center">${route.dest}</span></div></div>
+                            <div class="bg-gray-50 p-3 rounded-xl border border-gray-100 mb-4"><p class="text-sm text-textBrown font-medium leading-relaxed">${route.desc}</p></div>
+                            <a href="${navLink}" target="_blank" class="w-full flex items-center justify-center gap-2 ${modeColor} border-2 px-4 py-3 rounded-xl font-bold hover:opacity-80 transition-opacity">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                                一鍵路線導航</a>
+                        </div>`;
+                });
+                html += `<button onclick="openAddTransportModal('${dayName}')" class="w-full py-3 border-4 border-dashed border-blue-200 bg-white/50 text-blue-400 rounded-2xl font-cute text-lg font-bold hover:bg-blue-50 transition-all flex items-center justify-center gap-2"><span class="text-2xl leading-none">+</span> 新增此日路線</button></div></div>`;
+            });
+            html += `</div></div>`; container.innerHTML = html;
+        }
+
+        function renderLotteGuide() {
+            const container = document.getElementById('contentArea');
+            container.innerHTML = `
+                <div class="animate-fade-in pb-10">
+                    <div class="space-y-8">
+                        <div class="cute-card border-pink-200 p-5 bg-pink-50/30">
+                            <h3 class="text-lg font-cute font-bold text-pinkMain mb-4 flex items-center gap-2"><span>⚠️</span> 出發前與入園注意事項</h3>
+                            <div class="space-y-4">
+                                <div class="bg-white p-4 rounded-2xl border border-pink-100">
+                                    <h4 class="font-bold text-textBrown mb-1 text-sm">1. 必下載官方 App (Lotte World Adventure)</h4>
+                                    <p class="text-sm text-textBrown/80 leading-relaxed">入園後第一時間將 4 個人的門票 QR Code 掃描綁定到同一個人的手機 App 內。這個 App 可以查看地圖、各項設施的「實時排隊時間」，更重要的是可以用來搶 Magic Pass（快速通行證）。</p>
+                                </div>
+                                <div class="bg-white p-4 rounded-2xl border border-pink-100">
+                                    <h4 class="font-bold text-textBrown mb-1 text-sm">2. 關於 Magic Pass (快速通行證)</h4>
+                                    <ul class="list-disc pl-5 text-sm text-textBrown/80 leading-relaxed space-y-1">
+                                        <li><strong>免費版：</strong> 綁定門票後，每人有 3 次免費預約機會（在 App 內搶，極難搶，每逢正點/半點更新名額，建議手速要快）。</li>
+                                        <li><strong>付費版 (Premium)：</strong> 如果你們不想排隊，極度建議提早在一樓售票處或自動售票機購買「5次券」或「10次券」。四人同行買付費版，可以省下大量體力去拍照！</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-4 rounded-2xl border border-pink-100">
+                                    <h4 class="font-bold text-textBrown mb-1 text-sm">3. 攝影裝備與隨身物品建議</h4>
+                                    <p class="text-sm text-textBrown/80 leading-relaxed mb-2">4 個女仔去主題樂園一定會拍很多靚相。如果會帶相機，建議帶備一支 <strong>24-70mm</strong> 的標準變焦鏡頭（方便捕捉半身人像），以及一支 <strong>20mm 左右的超廣角鏡頭</strong>（在室外「魔幻島」拍攝整座大城堡與全身長腿照時極度實用）。</p>
+                                    <p class="text-sm text-textBrown/80 leading-relaxed"><strong>儲物櫃：</strong> 園內室內外都有很多付費儲物櫃。建議將多餘的厚外套、買完的紀念品先鎖起來，輕裝上陣。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-cute font-bold text-purple-600 mb-5 text-center">✨ 4 人閨蜜完美遊玩路線 ✨</h3>
+                            
+                            <div class="relative pl-6 space-y-8">
+                                <div class="absolute left-[15px] top-4 bottom-4 w-1 bg-purple-100 rounded-full z-0"></div>
+
+                                <div class="relative z-10">
+                                    <div class="absolute -left-10 top-0 w-8 h-8 bg-pinkMain text-white rounded-full flex items-center justify-center font-bold shadow-sm border-2 border-white">1</div>
+                                    <div class="cute-card border-pink-200 p-5 group hover:-translate-y-1">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <h4 class="font-bold text-pinkMain text-lg flex items-center gap-2"><span>👗</span> 變身韓國高校生</h4>
+                                            <span class="text-xs font-bold text-pinkMain bg-pinkLight px-2 py-1 rounded-lg">09:30 - 10:30</span>
+                                        </div>
+                                        <p class="text-sm text-textBrown/80 leading-relaxed"><strong>強烈建議：</strong> 入園前先在園外（例如地庫的「梨花校服」或附近的租借店）租借韓國高校制服。4 個人穿著同款不同色的格仔裙，配上樂園內售賣的超可愛卡通頭飾，拍出來的照片會有極強的女團感！</p>
+                                    </div>
+                                </div>
+
+                                <div class="relative z-10">
+                                    <div class="absolute -left-10 top-0 w-8 h-8 bg-blue-400 text-white rounded-full flex items-center justify-center font-bold shadow-sm border-2 border-white">2</div>
+                                    <div class="cute-card border-blue-200 p-5 group hover:-translate-y-1">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <h4 class="font-bold text-blue-500 text-lg flex items-center gap-2"><span>🏰</span> 早上直衝室外「魔幻島」</h4>
+                                            <span class="text-xs font-bold text-blue-500 bg-blue-100 px-2 py-1 rounded-lg">10:30 - 13:30</span>
+                                        </div>
+                                        <p class="text-sm text-textBrown/80 leading-relaxed mb-3">早上光線最好，而且熱門機動遊戲都在室外，趁人潮未達頂峰先玩！</p>
+                                        <div class="bg-blue-50 rounded-xl p-3 mb-3 border border-blue-100">
+                                            <strong class="text-sm text-blue-600 block mb-1">🎢 必玩刺激設施：</strong>
+                                            <ul class="list-disc pl-4 text-sm text-textBrown/80 space-y-1">
+                                                <li><strong>亞特蘭提斯 (Atlantis)：</strong> 樂園最人氣的過山車，瞬間加速極快，必玩！</li>
+                                                <li><strong>彗星特快車 (Comet Express)：</strong> 在黑暗中旋轉的過山車，非常過癮。</li>
+                                                <li><strong>新高空鞦韆 / 自由落體：</strong> 挑戰膽量的極限設施。</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-blue-50 rounded-xl p-3 border border-blue-100">
+                                            <strong class="text-sm text-blue-600 block mb-1">📸 必拍打卡位：</strong>
+                                            <p class="text-sm text-textBrown/80"><strong>魔幻城堡 (Magic Castle)：</strong> 走到通往城堡的藍色天橋上，用廣角鏡頭可以將 4 個人與整座城堡完美收納入鏡。</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="relative z-10">
+                                    <div class="absolute -left-10 top-0 w-8 h-8 bg-orange-400 text-white rounded-full flex items-center justify-center font-bold shadow-sm border-2 border-white">3</div>
+                                    <div class="cute-card border-orange-200 p-5 group hover:-translate-y-1">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <h4 class="font-bold text-orange-500 text-lg flex items-center gap-2"><span>🎠</span> 中午避暑轉戰室內「探險世界」</h4>
+                                            <span class="text-xs font-bold text-orange-500 bg-orange-100 px-2 py-1 rounded-lg">13:30 - 17:00</span>
+                                        </div>
+                                        <p class="text-sm text-textBrown/80 leading-relaxed mb-3">中午太陽最猛烈，回到有超強冷氣的室內館吃午餐及繼續玩。</p>
+                                        <div class="bg-orange-50 rounded-xl p-3 border border-orange-100">
+                                            <strong class="text-sm text-orange-600 block mb-1">🎡 必玩設施：</strong>
+                                            <ul class="list-disc pl-4 text-sm text-textBrown/80 space-y-1">
+                                                <li><strong>法國大革命 (French Revolution)：</strong> 會穿梭整個室內館的過山車，甚至會穿過行人天橋。</li>
+                                                <li><strong>西班牙海盜船 (The Conquistador)：</strong> 經典必玩。</li>
+                                                <li><strong>熱氣球飛行：</strong> 從高空俯瞰整個室內樂園，適合 4 個人坐在一起慢慢拍照休息。</li>
+                                                <li><strong>旋轉木馬：</strong> 韓劇拍攝地。強烈建議等到晚上開燈後再拍，金碧輝煌的背景配上制服氛圍感拉滿。</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="relative z-10">
+                                    <div class="absolute -left-10 top-0 w-8 h-8 bg-purple-400 text-white rounded-full flex items-center justify-center font-bold shadow-sm border-2 border-white">4</div>
+                                    <div class="cute-card border-purple-200 p-5 group hover:-translate-y-1">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <h4 class="font-bold text-purple-600 text-lg flex items-center gap-2"><span>🌅</span> 傍晚黃金時刻與夜間巡遊</h4>
+                                            <span class="text-xs font-bold text-purple-600 bg-purple-100 px-2 py-1 rounded-lg">17:00 - 19:00</span>
+                                        </div>
+                                        <p class="text-sm text-textBrown/80 leading-relaxed mb-2">大概傍晚 5 點半左右（Magic Hour），回到室外的石村湖畔。夕陽打在城堡和遠處的樂天塔上，光影層次極佳，是拍攝人像的最佳時機。</p>
+                                        <p class="text-sm text-textBrown/80 leading-relaxed mb-3">晚上 8 點室內館會有大型的夜間花車巡遊 (Night Parade) 和燈光秀。如果不看巡遊，這個時候排熱門設施的人會減少很多。</p>
+                                        <div class="bg-purple-50 rounded-xl p-3 border border-purple-100">
+                                            <strong class="text-sm text-purple-600 block mb-1">💡 行程溫馨提示：</strong>
+                                            <p class="text-sm text-textBrown/80">由於你們晚上安排了在旁邊的松理團路吃晚餐，建議大概玩到 18:00 左右，趁天空還有點微藍調（Blue Hour）拍完亮燈的城堡後，就可以準備離園去吃好西了！</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            `;
+        }
+
+        function handleCheck(cb) { const span = cb.nextElementSibling; if(cb.checked) { span.classList.add('line-through', 'text-gray-300'); span.classList.remove('text-textBrown'); } else { span.classList.remove('line-through', 'text-gray-300'); span.classList.add('text-textBrown'); } const state = {}; document.querySelectorAll('.checklist-box').forEach(c => state[c.id] = c.checked); localStorage.setItem('seoulTripChecklist', JSON.stringify(state)); }
+        function loadChecklistState() { const savedState = JSON.parse(localStorage.getItem('seoulTripChecklist')); if(savedState) { document.querySelectorAll('.checklist-box').forEach(cb => { if(savedState[cb.id]) { cb.checked = true; cb.nextElementSibling.classList.add('line-through', 'text-gray-300'); cb.nextElementSibling.classList.remove('text-textBrown'); } }); } }
+
+        function switchTab(tabId) {
+            currentTab = tabId; document.querySelectorAll('.nav-btn').forEach(btn => { btn.classList.remove('active'); btn.classList.add('cute-btn-inactive'); });
+            const activeBtn = document.querySelector(`.nav-btn[data-tab="${tabId}"]`);
+            if(activeBtn) { activeBtn.classList.remove('cute-btn-inactive'); activeBtn.classList.add('active'); activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }); }
+            
+            if (tabId === 'overview') renderOverview(); 
+            else if (tabId === 'checklist') renderChecklist(); 
+            else if (tabId === 'transport') renderTransport(); 
+            else if (tabId === 'lotteworld') renderLotteGuide();
+            else if (tabId === 'shopping' || tabId === 'food') renderGuide(tabId); 
+            else renderDay(tabId); 
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => { switchTab('overview'); fetchWeather(); setInterval(fetchWeather, 30 * 60 * 1000); });
+
+        function closeModal(id) { const el = document.getElementById(id); el.classList.remove('opacity-100'); setTimeout(() => { el.classList.add('hidden'); }, 200); }
+        function openModal(id) { const el = document.getElementById(id); el.classList.remove('hidden'); setTimeout(() => { el.classList.add('opacity-100'); }, 10); }
+
+        function createSubItemRowHtml(name = '', desc = '', keyword = '') { return `<div class="sub-item-row bg-gray-50 border border-pinkBorder/50 rounded-xl p-3 relative group"><button type="button" onclick="this.parentElement.remove()" class="absolute -top-2 -right-2 bg-white text-red-400 border border-red-200 rounded-full p-1 shadow-sm hover:bg-red-50 hover:text-red-600 transition-colors z-10"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg></button><div class="space-y-2"><input type="text" class="si-name w-full bg-white border border-gray-200 rounded-lg px-3 py-1.5 text-sm outline-none focus:border-pinkMain" placeholder="名稱 (如: 橋村炸雞)" value="${name}"><div class="flex gap-2"><input type="text" class="si-desc flex-1 bg-white border border-gray-200 rounded-lg px-3 py-1.5 text-sm outline-none focus:border-pinkMain" placeholder="備註描述" value="${desc}"><input type="text" class="si-keyword flex-1 bg-white border border-gray-200 rounded-lg px-3 py-1.5 text-sm outline-none focus:border-pinkMain" placeholder="導航關鍵字" value="${keyword}"></div></div></div>`; }
+        function renderSubItems(items = []) { const container = document.getElementById('subItemsContainer'); container.innerHTML = ''; items.forEach(item => { container.insertAdjacentHTML('beforeend', createSubItemRowHtml(item.name, item.desc, item.keyword || '')); }); }
+        function addSubItemRow() { document.getElementById('subItemsContainer').insertAdjacentHTML('beforeend', createSubItemRowHtml()); }
+        function getSubItemsData() { const items = []; document.querySelectorAll('.sub-item-row').forEach(row => { const name = row.querySelector('.si-name').value.trim(); const desc = row.querySelector('.si-desc').value.trim(); const keyword = row.querySelector('.si-keyword').value.trim(); if (name || desc) items.push({ name: name, desc: desc, keyword: keyword, link: keyword ? gMap(keyword) : null }); }); return items; }
+
+        function deleteEvent(dayId, index) { if(!confirm("確定要刪除這個行程嗎？")) return; const day = appData.days.find(d => d.id === dayId); if(day) { day.events.splice(index, 1); saveAppData(); renderDay(dayId); } }
+        function openAddEventModal(dayId) { document.getElementById('evModalTitle').innerHTML = '<span>✨</span> 新增行程'; document.getElementById('evDayId').value = dayId; document.getElementById('evIndex').value = ''; document.getElementById('evTime').value = ''; document.getElementById('evTitle').value = ''; document.getElementById('evDesc').value = ''; document.getElementById('evLocation').value = ''; document.getElementById('evType').value = 'shop'; renderSubItems([]); openModal('eventModal'); }
+        function openEditEventModal(dayId, index) { const day = appData.days.find(d => d.id === dayId); const event = day.events[index]; document.getElementById('evModalTitle').innerHTML = '<span>✏️</span> 編輯行程'; document.getElementById('evDayId').value = dayId; document.getElementById('evIndex').value = index; document.getElementById('evTime').value = event.time || ''; document.getElementById('evTitle').value = event.title || ''; document.getElementById('evDesc').value = event.desc || ''; document.getElementById('evLocation').value = event.location || ''; document.getElementById('evType').value = event.type || 'shop'; renderSubItems(event.subItems || []); openModal('eventModal'); }
+        function submitEvent() { const dayId = document.getElementById('evDayId').value; const indexStr = document.getElementById('evIndex').value; const time = document.getElementById('evTime').value || '時間未定'; const title = document.getElementById('evTitle').value; const desc = document.getElementById('evDesc').value; const location = document.getElementById('evLocation').value; const typeKey = document.getElementById('evType').value; if(!title) return alert("請填寫標題喔！"); const tConf = typeConfig[typeKey]; const eventData = { time: time, type: typeKey, icon: tConf.icon, color: tConf.color, title: title, desc: desc, location: location, routeDesc: location ? '打開地圖' : null, routeLink: location ? gMap(location) : null, subItems: getSubItemsData() }; const day = appData.days.find(d => d.id === dayId); if(day) { if (indexStr === '') { eventData.duration = ''; day.events.push(eventData); } else { eventData.duration = day.events[parseInt(indexStr)].duration; day.events[parseInt(indexStr)] = eventData; } saveAppData(); closeModal('eventModal'); renderDay(dayId); } }
+
+        function deleteGuideItem(type, catIndex, itemIndex) { if(!confirm("確定要刪除這個地點嗎？")) return; const data = type === 'shopping' ? appData.shoppingGuide : appData.foodGuide; data[catIndex].items.splice(itemIndex, 1); saveAppData(); renderGuide(type); }
+        function openAddGuideModal(type, catIndex) { document.getElementById('gdModalTitle').innerHTML = '<span>📌</span> 新增地點'; document.getElementById('gdType').value = type; document.getElementById('gdCatIndex').value = catIndex; document.getElementById('gdItemIndex').value = ''; document.getElementById('gdName').value = ''; document.getElementById('gdDesc').value = ''; document.getElementById('gdKeyword').value = ''; openModal('guideModal'); }
+        function openEditGuideModal(type, catIndex, itemIndex) { const data = type === 'shopping' ? appData.shoppingGuide : appData.foodGuide; const item = data[catIndex].items[itemIndex]; document.getElementById('gdModalTitle').innerHTML = '<span>✏️</span> 編輯地點'; document.getElementById('gdType').value = type; document.getElementById('gdCatIndex').value = catIndex; document.getElementById('gdItemIndex').value = itemIndex; document.getElementById('gdName').value = item.name || ''; document.getElementById('gdDesc').value = item.desc || ''; document.getElementById('gdKeyword').value = item.keyword || ''; openModal('guideModal'); }
+        function submitGuideItem() { const type = document.getElementById('gdType').value; const catIndex = document.getElementById('gdCatIndex').value; const indexStr = document.getElementById('gdItemIndex').value; const name = document.getElementById('gdName').value; const desc = document.getElementById('gdDesc').value; const keyword = document.getElementById('gdKeyword').value; if(!name) return alert("店名是必填的喔！"); const isShop = type === 'shopping'; const categoryObj = isShop ? appData.shoppingGuide[catIndex] : appData.foodGuide[catIndex]; let locTag = indexStr !== '' ? categoryObj.items[parseInt(indexStr)].location : (isShop ? categoryObj.category.replace(/[^a-zA-Z\u4e00-\u9fa5]/g, '').trim() : categoryObj.location); const itemData = { name: name, desc: desc, location: locTag, keyword: keyword, link: keyword ? gMap(keyword) : null }; if (indexStr === '') categoryObj.items.push(itemData); else categoryObj.items[parseInt(indexStr)] = itemData; saveAppData(); closeModal('guideModal'); renderGuide(type); }
+
+        function deleteTransport(index) { if(!confirm("確定要刪除這條路線嗎？")) return; appData.transportGuide.splice(index, 1); saveAppData(); renderTransport(); }
+        function openAddTransportModal(day = 'Day 1') { document.getElementById('tpModalTitle').innerHTML = '<span>🚇</span> 新增交通路線'; document.getElementById('tpIndex').value = ''; document.getElementById('tpDay').value = day; document.getElementById('tpTitle').value = ''; document.getElementById('tpOrigin').value = ''; document.getElementById('tpDest').value = ''; document.getElementById('tpMode').value = 'transit'; document.getElementById('tpTime').value = ''; document.getElementById('tpDesc').value = ''; openModal('transportModal'); }
+        function openEditTransportModal(index) { const route = appData.transportGuide[index]; document.getElementById('tpModalTitle').innerHTML = '<span>✏️</span> 編輯交通路線'; document.getElementById('tpIndex').value = index; document.getElementById('tpDay').value = route.day; document.getElementById('tpTitle').value = route.title; document.getElementById('tpOrigin').value = route.origin; document.getElementById('tpDest').value = route.dest; document.getElementById('tpMode').value = route.mode; document.getElementById('tpTime').value = route.time; document.getElementById('tpDesc').value = route.desc; openModal('transportModal'); }
+        function submitTransport() { const indexStr = document.getElementById('tpIndex').value; const day = document.getElementById('tpDay').value; const title = document.getElementById('tpTitle').value; const origin = document.getElementById('tpOrigin').value; const dest = document.getElementById('tpDest').value; const mode = document.getElementById('tpMode').value; const time = document.getElementById('tpTime').value; const desc = document.getElementById('tpDesc').value; if(!title || !origin || !dest) return alert("標題、起點與終點都必須填寫喔！"); const routeData = { id: indexStr !== '' ? appData.transportGuide[parseInt(indexStr)].id : 't' + Date.now(), day: day, title: title, origin: origin, dest: dest, mode: mode, time: time, desc: desc }; if (indexStr === '') appData.transportGuide.push(routeData); else appData.transportGuide[parseInt(indexStr)] = routeData; appData.transportGuide.sort((a, b) => a.day.localeCompare(b.day)); saveAppData(); closeModal('transportModal'); renderTransport(); }
+
+        function deleteChecklistCategory(catIndex) { if(!confirm("確定要刪除這個分類嗎？")) return; appData.checklistData.categories.splice(catIndex, 1); saveAppData(); renderChecklist(); }
+        function openAddChecklistCatModal() { document.getElementById('clCatModalTitle').innerHTML = '<span>📂</span> 新增分類'; document.getElementById('clCatIndex').value = ''; document.getElementById('clCatTitle').value = ''; openModal('checklistCatModal'); }
+        function openEditChecklistCatModal(catIndex) { const cat = appData.checklistData.categories[catIndex]; document.getElementById('clCatModalTitle').innerHTML = '<span>✏️</span> 編輯分類'; document.getElementById('clCatIndex').value = catIndex; document.getElementById('clCatTitle').value = cat.title || ''; openModal('checklistCatModal'); }
+        function submitChecklistCategory() { const indexStr = document.getElementById('clCatIndex').value; const title = document.getElementById('clCatTitle').value; if(!title) return alert("請填寫分類標題喔！"); if (indexStr === '') { appData.checklistData.categories.push({ title: title, items: [] }); } else { appData.checklistData.categories[parseInt(indexStr)].title = title; } saveAppData(); closeModal('checklistCatModal'); renderChecklist(); }
+
+        function deleteChecklistItem(catIndex, itemIndex) { if(!confirm("確定要刪除這個物品嗎？")) return; appData.checklistData.categories[catIndex].items.splice(itemIndex, 1); saveAppData(); renderChecklist(); }
+        function openAddChecklistItemModal(catIndex) { document.getElementById('clItemModalTitle').innerHTML = '<span>✅</span> 新增物品'; document.getElementById('clItemCatIndex').value = catIndex; document.getElementById('clItemIndex').value = ''; document.getElementById('clItemText').value = ''; openModal('checklistItemModal'); }
+        function openEditChecklistItemModal(catIndex, itemIndex) { const item = appData.checklistData.categories[catIndex].items[itemIndex]; document.getElementById('clItemModalTitle').innerHTML = '<span>✏️</span> 編輯物品'; document.getElementById('clItemCatIndex').value = catIndex; document.getElementById('clItemIndex').value = itemIndex; document.getElementById('clItemText').value = item.text || ''; openModal('checklistItemModal'); }
+        function submitChecklistItem() { const catIndex = document.getElementById('clItemCatIndex').value; const indexStr = document.getElementById('clItemIndex').value; const text = document.getElementById('clItemText').value; if(!text) return alert("請填寫物品描述喔！"); const itemData = { id: 'c' + Date.now(), text: text }; if (indexStr === '') { appData.checklistData.categories[parseInt(catIndex)].items.push(itemData); } else { appData.checklistData.categories[parseInt(catIndex)].items[parseInt(indexStr)] = itemData; } saveAppData(); closeModal('checklistItemModal'); renderChecklist(); }
+    </script>
+</body>
+</html>
