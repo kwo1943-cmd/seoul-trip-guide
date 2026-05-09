@@ -291,6 +291,10 @@
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
                     出發清單
                 </button>
+                <button onclick="switchTab('tools')" data-tab="tools" class="nav-btn cute-btn cute-btn-inactive flex-shrink-0 px-4 py-2 rounded-full text-sm font-cute text-base whitespace-nowrap flex items-center gap-1.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                    小工具
+                </button>
             </nav>
         </header>
 
@@ -327,6 +331,9 @@
         </button>
         <button onclick="switchTab('overview')" class="bg-white border-4 border-pinkLight text-pinkMain w-14 h-14 rounded-full shadow-[0_4px_10px_rgba(255,141,161,0.4)] flex items-center justify-center hover:bg-pinkLight hover:border-pinkMain transition-transform transform hover:scale-105" title="回到總覽">
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/></svg>
+        </button>
+        <button onclick="switchTab('tools')" class="bg-yellow-100 border-4 border-yellow-300 text-yellow-600 w-14 h-14 rounded-full shadow-[0_4px_10px_rgba(234,179,8,0.4)] flex items-center justify-center hover:bg-yellow-200 hover:border-yellow-400 transition-transform transform hover:scale-105" title="小工具">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
         </button>
     </div>
 
@@ -615,8 +622,14 @@ function renderOverview() {
                     <div class="cute-banner">
                         <span class="cute-banner-icon">
                             <svg class="w-12 h-12" viewBox="0 0 48 48" fill="none">
-                                <path d="M24 4C13 4 6 12 6 22c0 14 18 22 18 22s18-8 18-22C42 12 35 4 24 4z" fill="#BDE0FE" stroke="#FFB6C1" stroke-width="2"/>
-                                <path d="M20 20l4 8 8-12" stroke="#FF8DA1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M24 6L20 18H8L18 26L14 40L24 32L34 40L30 26L40 18H28L24 6Z" fill="#FFB6C1" stroke="#FF6B8B" stroke-width="1.5"/>
+                                <circle cx="24" cy="24" r="10" fill="none" stroke="#FF8DA1" stroke-width="2"/>
+                                <circle cx="24" cy="8" r="3" fill="#FF8DA1"/>
+                                <line x1="24" y1="14" x2="24" y2="18" stroke="#FF8DA1" stroke-width="1.5"/>
+                                <line x1="14" y1="18" x2="18" y2="22" stroke="#FF8DA1" stroke-width="1.5"/>
+                                <line x1="34" y1="18" x2="30" y2="22" stroke="#FF8DA1" stroke-width="1.5"/>
+                                <path d="M18 38L24 44L30 38" stroke="#FFB6C1" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="24" y1="34" x2="24" y2="40" stroke="#FFB6C1" stroke-width="2"/>
                             </svg>
                         </span>
                         <div class="cute-banner-text">
@@ -757,8 +770,8 @@ function renderOverview() {
                         <span class="cute-banner-icon">
                             ${dayId === 'day1' ? '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><path d="M40 12L24 4 8 12v8l16 6 16-6v-8z" fill="#BDE0FE" stroke="#FFB6C1" stroke-width="2"/><path d="M8 20v16l16 8 16-8V20" fill="#FFE4E8" stroke="#FF8DA1" stroke-width="2"/><path d="M24 28v12" stroke="#FF8DA1" stroke-width="2"/></svg>' :
                               dayId === 'day2' ? '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" fill="#E8DFF5" stroke="#9333EA" stroke-width="2"/><path d="M24 14v10l7 7" stroke="#9333EA" stroke-width="2.5" stroke-linecap="round"/></svg>' :
-                              dayId === 'day3' ? '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" fill="#FFDAC1" stroke="#F97316" stroke-width="2"/><path d="M24 10v4M24 34v4M10 24h4M34 24h4" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="24" r="5" fill="#F97316"/></svg>' :
-                              dayId === 'day4' ? '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" fill="#99F6E4" stroke="#14B8A6" stroke-width="2"/><path d="M18 20l4 4 8-8M18 28l4 4 8-8" stroke="#14B8A6" stroke-width="2.5" stroke-linecap="round"/></svg>' :
+                              dayId === 'day3' ? '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="20" r="14" fill="#FFDAC1" stroke="#F97316" stroke-width="2"/><line x1="24" y1="20" x2="24" y2="6" stroke="#F97316" stroke-width="2"/><line x1="24" y1="20" x2="10" y2="20" stroke="#F97316" stroke-width="2"/><line x1="24" y1="20" x2="38" y2="20" stroke="#F97316" stroke-width="2"/><line x1="24" y1="20" x2="16" y2="10" stroke="#F97316" stroke-width="2"/><line x1="24" y1="20" x2="32" y2="10" stroke="#F97316" stroke-width="2"/><line x1="24" y1="20" x2="16" y2="30" stroke="#F97316" stroke-width="2"/><line x1="24" y1="20" x2="32" y2="30" stroke="#F97316" stroke-width="2"/><circle cx="24" cy="6" r="3" fill="#F97316"/><circle cx="10" cy="20" r="3" fill="#F97316"/><circle cx="38" cy="20" r="3" fill="#F97316"/><circle cx="16" cy="10" r="3" fill="#F97316"/><circle cx="32" cy="10" r="3" fill="#F97316"/><circle cx="16" cy="30" r="3" fill="#F97316"/><circle cx="32" cy="30" r="3" fill="#F97316"/><path d="M16 34L24 40L32 34" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/><line x1="24" y1="34" x2="24" y2="40" stroke="#F97316" stroke-width="2.5"/></svg>' :
+                              dayId === 'day4' ? '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><path d="M8 44V20L24 8L40 20V44H8Z" fill="#99F6E4" stroke="#14B8A6" stroke-width="2"/><path d="M8 20L24 8L40 20" fill="#E0F7F4" stroke="#14B8A6" stroke-width="2"/><rect x="16" y="28" width="6" height="8" fill="#14B8A6" rx="1"/><rect x="26" y="28" width="6" height="8" fill="#14B8A6" rx="1"/><rect x="21" y="36" width="6" height="8" fill="#FF8DA1" stroke="#FF6B8B" stroke-width="1.5"/><path d="M8 20H40" stroke="#14B8A6" stroke-width="2"/><circle cx="24" cy="16" r="3" fill="#FFB6C1"/></svg>' :
                               '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><path d="M12 12h24l-3 24a4 4 0 01-4 4H19a4 4 0 01-4-4L12 12z" fill="#FFE4E8" stroke="#FF8DA1" stroke-width="2"/><path d="M18 12V8a6 6 0 0112 0v4" stroke="#FF8DA1" stroke-width="2.5" stroke-linecap="round"/></svg>'}
                         </span>
                         <div class="cute-banner-text">
@@ -833,7 +846,7 @@ function renderOverview() {
                             <span class="cute-banner-icon">
                                 ${isShop ?
                                     '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><path d="M10 14h34l-4 28a4 4 0 01-4 4H18a4 4 0 01-4-4L10 14z" fill="#FFE4E8" stroke="#FF8DA1" stroke-width="2.5"/><path d="M18 14V10a8 8 0 0116 0v4" stroke="#FF8DA1" stroke-width="2.5" stroke-linecap="round"/></svg>' :
-                                    '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><path d="M8 18v22a4 4 0 004 4h24a4 4 0 004-4V18" fill="#FFDAC1" stroke="#F97316" stroke-width="2.5"/><path d="M6 18h36" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/><path d="M18 10c0-3 3-6 10-6s10 3 10 6" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/></svg>'
+                                    '<svg class="w-12 h-12" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="32" rx="16" ry="8" fill="#FFDAC1" stroke="#F97316" stroke-width="2.5"/><path d="M8 32V28C8 22 14 18 24 18C34 18 40 22 40 28V32" stroke="#F97316" stroke-width="2.5"/><path d="M18 14C18 10 20 8 24 8C28 8 30 10 30 14" stroke="#F97316" stroke-width="2" stroke-linecap="round"/><line x1="14" y1="10" x2="16" y2="14" stroke="#F97316" stroke-width="1.5" stroke-linecap="round"/><line x1="34" y1="10" x2="32" y2="14" stroke="#F97316" stroke-width="1.5" stroke-linecap="round"/><path d="M20 26C20 26 22 28 24 28C26 28 28 26 28 26" stroke="#F97316" stroke-width="1.5" stroke-linecap="round"/></svg>'
                                 }
                             </span>
                             <div class="cute-banner-text">
@@ -1053,8 +1066,134 @@ function renderOverview() {
             `;
         }
 
+function renderTools() {
+            const container = document.getElementById('contentArea');
+            const savedBalance = localStorage.getItem('seoulCardBalance') || '';
+            const phrases = [
+                { yue: '請問可以退稅嗎？', kr: '택스 리펀드 되나요?', rom: 'taek-seu ri-peon-deu doe-na-yo', emoji: '🛍️' },
+                { yue: '請問這個有大一個碼嗎？', kr: '이거 더 큰 사이즈 있나요?', rom: 'i-geo deo keun sa-i-ji in-na-yo', emoji: '👗' },
+                { yue: '我們想分開結帳', kr: '따로따로 계산할게요', rom: 'dda-ro-dda-ro gye-san-hal-ge-yo', emoji: '💳' },
+                { yue: '請問這個會很辣嗎？', kr: '이거 많이 매워요?', rom: 'i-geo ma-ni mae-wo-yo', emoji: '🌶️' },
+                { yue: '請問這個多少錢？', kr: '이거 얼마예요?', rom: 'i-geo eol-ma-ye-yo', emoji: '💰' },
+                { yue: '可以用信用卡嗎？', kr: '카드 결제 가능해요?', rom: 'ka-deu gye-gye ga-neung-hae-yo', emoji: '💳' },
+                { yue: '請給我一份包裝', kr: '하나만 포장해 주세요', rom: 'ha-na-man po-jang-hae ju-se-yo', emoji: '🎁' },
+                { yue: '請問廁所在哪裡？', kr: '화장실 어디에 있어요?', rom: 'hwa-jang-sil o-di-e iss-eo-yo', emoji: '🚻' },
+                { yue: '我想預約', kr: '예약하고 싶어요', rom: 'ye-yak-ha-go si-peo-yo', emoji: '📅' },
+                { yue: '請問現在排隊要多久？', kr: '지금은排队 얼마나 걸려요?', rom: 'ji-geum-eun pae-dae eol-ma-na geol-lyeo-yo', emoji: '⏰' },
+                { yue: '請問有素食選項嗎？', kr: '채식 메뉴 있어요?', rom: 'chae-sik me-nyu iss-eo-yo', emoji: '🥗' },
+                { yue: '請問在哪裡結帳？', kr: '계산대在哪에 있어요?', rom: 'gye-san-da-e o-di-e iss-eo-yo', emoji: '🧾' }
+            ];
+            const shoesTable = '<table class="w-full text-sm"><thead><tr class="bg-purple-50 text-purple-700"><th class="py-2 px-3 text-left font-bold">韓國(mm)</th><th class="py-2 px-3 text-left font-bold">香港/歐洲</th><th class="py-2 px-3 text-left font-bold">美國</th></tr></thead><tbody><tr class="border-b border-purple-100"><td class="py-2 px-3 font-bold text-purple-600">230</td><td class="py-2 px-3">36</td><td class="py-2 px-3">6</td></tr><tr class="border-b border-purple-100"><td class="py-2 px-3 font-bold text-purple-600">235</td><td class="py-2 px-3">37</td><td class="py-2 px-3">6.5</td></tr><tr class="border-b border-purple-100"><td class="py-2 px-3 font-bold text-purple-600">240</td><td class="py-2 px-3">38</td><td class="py-2 px-3">7</td></tr><tr class="border-b border-purple-100"><td class="py-2 px-3 font-bold text-purple-600">245</td><td class="py-2 px-3">39</td><td class="py-2 px-3">7.5</td></tr><tr class="border-b border-purple-100"><td class="py-2 px-3 font-bold text-purple-600">250</td><td class="py-2 px-3">40</td><td class="py-2 px-3">8</td></tr><tr class="border-b border-purple-100"><td class="py-2 px-3 font-bold text-purple-600">255</td><td class="py-2 px-3">41</td><td class="py-2 px-3">8.5</td></tr><tr><td class="py-2 px-3 font-bold text-purple-600">260</td><td class="py-2 px-3">42</td><td class="py-2 px-3">9</td></tr></tbody></table>';
+            const clothesTable = '<table class="w-full text-sm"><thead><tr class="bg-purple-50 text-purple-700"><th class="py-2 px-3 text-left font-bold">韓國</th><th class="py-2 px-3 text-left font-bold">香港/台灣</th><th class="py-2 px-3 text-left font-bold">美國</th><th class="py-2 px-3 text-left font-bold">歐洲</th></tr></thead><tbody><tr class="border-b border-purple-100"><td class="py-2 px-3 font-bold text-purple-600">44 (XS)</td><td class="py-2 px-3">155/80</td><td class="py-2 px-3">0-2</td><td class="py-2 px-3">32</td></tr><tr class="border-b border-purple-100"><td class="py-2 px-3 font-bold text-purple-600">55 (S)</td><td class="py-2 px-3">155-160/80-84</td><td class="py-2 px-3">4-6</td><td class="py-2 px-3">34-36</td></tr><tr class="border-b border-purple-100"><td class="py-2 px-3 font-bold text-purple-600">66 (M)</td><td class="py-2 px-3">165-170/84-88</td><td class="py-2 px-3">8-10</td><td class="py-2 px-3">38-40</td></tr><tr class="border-b border-purple-100"><td class="py-2 px-3 font-bold text-purple-600">77 (L)</td><td class="py-2 px-3">170-175/88-92</td><td class="py-2 px-3">12-14</td><td class="py-2 px-3">42-44</td></tr><tr><td class="py-2 px-3 font-bold text-purple-600">88 (XL)</td><td class="py-2 px-3">175-180/92-96</td><td class="py-2 px-3">16-18</td><td class="py-2 px-3">46-48</td></tr></tbody></table>';
+            container.innerHTML = `
+                <div class="animate-fade-in pb-10">
+                    <div class="cute-banner">
+                        <span class="cute-banner-icon">
+                            <svg class="w-12 h-12" viewBox="0 0 48 48" fill="none">
+                                <path d="M24 6L20 18H8L18 26L14 40L24 32L34 40L30 26L40 18H28L24 6Z" fill="#FFF3B0" stroke="#F59E0B" stroke-width="2"/>
+                                <circle cx="24" cy="24" r="8" fill="none" stroke="#F59E0B" stroke-width="2"/>
+                                <path d="M20 20L24 24L32 16" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                        <div class="cute-banner-text">
+                            <h3>🛠️ 旅遊小工具</h3>
+                            <p>夾錢・尺碼・韓文・餘額</p>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+
+                        <div class="cute-card border-yellow-200 p-5">
+                            <h3 class="font-cute text-xl font-bold text-yellow-600 mb-4 flex items-center gap-2">
+                                <span class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center text-xl">👯‍♀️</span>
+                                閨蜜夾錢神器 (AA制)
+                            </h3>
+                            <div class="bg-yellow-50/50 p-4 rounded-2xl border-2 border-yellow-200 mb-4">
+                                <p class="text-sm text-yellow-700 font-bold mb-3">💡 自動匯率轉換（1 KRW = 0.0058 HKD）</p>
+                                <div class="grid grid-cols-2 gap-3 mb-4">
+                                    <div>
+                                        <label class="block text-xs font-bold text-yellow-600 mb-1">帳單總額 (KRW)</label>
+                                        <input type="number" id="aaKrw" class="modal-input !border-yellow-300" placeholder="例: 120000">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-yellow-600 mb-1">人數</label>
+                                        <select id="aaPeople" class="modal-input !border-yellow-300 bg-white cursor-pointer">
+                                            <option value="2">2人</option><option value="3">3人</option><option value="4" selected>4人</option>
+                                            <option value="5">5人</option><option value="6">6人</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-xl p-4 text-center border-2 border-yellow-200">
+                                    <p class="text-xs text-gray-500 font-bold mb-1">每人需夾 💰</p>
+                                    <p class="text-3xl font-cute font-bold text-yellow-600" id="aaResult">HK$ ---</p>
+                                    <p class="text-xs text-gray-400 mt-1" id="aaKrwDisplay">-- KRW</p>
+                                </div>
+                                <button onclick="calcAA()" class="w-full mt-3 bg-yellow-400 text-white font-bold py-2 rounded-xl border-2 border-yellow-500 shadow-[2px_2px_0px_#CA8A04] hover:translate-y-[-1px] transition-transform">計算</button>
+                            </div>
+                        </div>
+
+                        <div class="cute-card border-purple-200 p-5">
+                            <h3 class="font-cute text-xl font-bold text-purple-600 mb-4 flex items-center gap-2">
+                                <span class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-xl">👗</span>
+                                韓國尺碼對照表
+                            </h3>
+                            <div class="flex gap-2 mb-4">
+                                <button onclick="showSizeTable('shoes')" id="sizeTabShoes" class="flex-1 py-2 px-4 rounded-xl font-bold text-sm border-2 border-purple-300 bg-purple-100 text-purple-700 transition-all">鞋子 (mm)</button>
+                                <button onclick="showSizeTable('clothes')" id="sizeTabClothes" class="flex-1 py-2 px-4 rounded-xl font-bold text-sm border-2 border-purple-200 bg-white text-purple-500 hover:bg-purple-50 transition-all">衣服</button>
+                            </div>
+                            <div id="sizeTableContainer">${shoesTable}</div>
+                        </div>
+
+                        <div class="cute-card border-teal-200 p-5">
+                            <h3 class="font-cute text-xl font-bold text-teal-600 mb-4 flex items-center gap-2">
+                                <span class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center text-xl">💬</span>
+                                「手指指」韓文急救卡
+                            </h3>
+                            <div class="grid grid-cols-2 gap-3">
+                                ${phrases.map((p, i) => `<button onclick="showPhrase(${i})" class="bg-teal-50 border-2 border-teal-200 rounded-xl p-3 text-left hover:bg-teal-100 hover:border-teal-300 transition-all active:scale-95">
+                                    <span class="text-xl">${p.emoji}</span>
+                                    <p class="text-sm font-bold text-teal-700 mt-1 leading-tight">${p.yue}</p>
+                                </button>`).join('')}
+                            </div>
+                        </div>
+
+                        <div class="cute-card border-pink-200 p-5">
+                            <h3 class="font-cute text-xl font-bold text-pinkMain mb-4 flex items-center gap-2">
+                                <span class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center text-xl">💳</span>
+                                WOWPASS / T-money 餘額
+                            </h3>
+                            <div class="flex gap-3 mb-4">
+                                <input type="number" id="cardBalance" class="modal-input flex-1 !border-pink-300" placeholder="輸入餘額 (KRW)" value="${savedBalance}">
+                                <button onclick="saveCardBalance()" class="bg-pinkMain text-white font-bold px-6 py-3 rounded-xl border-2 border-pinkDark shadow-[3px_3px_0px_#FF6B8B] hover:translate-y-[-2px] transition-transform">儲存</button>
+                            </div>
+                            ${savedBalance ? `<div class="bg-pinkLight/40 p-4 rounded-xl text-center border-2 border-pinkBorder"><p class="text-xs text-pinkDark font-bold">💰 卡內餘額</p><p class="text-2xl font-cute font-bold text-pinkMain">₩${parseInt(savedBalance).toLocaleString()}</p></div>` : ''}
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="phraseModal" class="fixed inset-0 bg-black/90 z-[200] hidden flex-col items-center justify-center p-8 opacity-0 transition-opacity">
+                    <button onclick="closePhraseModal()" class="absolute top-6 right-6 text-white bg-white/20 hover:bg-white/40 rounded-full p-3 transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                    <div class="text-center">
+                        <p class="text-6xl font-bold text-white mb-6" id="phraseKr">韓文</p>
+                        <p class="text-2xl text-pink-300 mb-4" id="phraseYue">廣東話</p>
+                        <p class="text-xl text-white/70" id="phraseRom">拼音</p>
+                    </div>
+                </div>`;
+            window.phrasesData = phrases;
+            window.shoesTableData = shoesTable;
+            window.clothesTableData = clothesTable;
+        }
+
         function handleCheck(cb) { const span = cb.nextElementSibling; if(cb.checked) { span.classList.add('line-through', 'text-gray-300'); span.classList.remove('text-textBrown'); } else { span.classList.remove('line-through', 'text-gray-300'); span.classList.add('text-textBrown'); } const state = {}; document.querySelectorAll('.checklist-box').forEach(c => state[c.id] = c.checked); localStorage.setItem('seoulTripChecklist', JSON.stringify(state)); }
         function loadChecklistState() { const savedState = JSON.parse(localStorage.getItem('seoulTripChecklist')); if(savedState) { document.querySelectorAll('.checklist-box').forEach(cb => { if(savedState[cb.id]) { cb.checked = true; cb.nextElementSibling.classList.add('line-through', 'text-gray-300'); cb.nextElementSibling.classList.remove('text-textBrown'); } }); } }
+
+        function calcAA() { const krw = parseFloat(document.getElementById('aaKrw').value) || 0; const people = parseInt(document.getElementById('aaPeople').value) || 4; const EXCHANGE_RATE = 0.0058; const hkd = krw * EXCHANGE_RATE; const perPerson = hkd / people; document.getElementById('aaResult').textContent = 'HK$ ' + perPerson.toFixed(2); document.getElementById('aaKrwDisplay').textContent = krw.toLocaleString() + ' KRW → HKD'; }
+        function showSizeTable(type) { const cont = document.getElementById('sizeTableContainer'); if(type==='shoes') { document.getElementById('sizeTabShoes').className='flex-1 py-2 px-4 rounded-xl font-bold text-sm border-2 border-purple-300 bg-purple-100 text-purple-700'; document.getElementById('sizeTabClothes').className='flex-1 py-2 px-4 rounded-xl font-bold text-sm border-2 border-purple-200 bg-white text-purple-500 hover:bg-purple-50'; cont.innerHTML = window.shoesTableData; } else { document.getElementById('sizeTabClothes').className='flex-1 py-2 px-4 rounded-xl font-bold text-sm border-2 border-purple-300 bg-purple-100 text-purple-700'; document.getElementById('sizeTabShoes').className='flex-1 py-2 px-4 rounded-xl font-bold text-sm border-2 border-purple-200 bg-white text-purple-500 hover:bg-purple-50'; cont.innerHTML = window.clothesTableData; } }
+        function showPhrase(i) { const p = window.phrasesData[i]; document.getElementById('phraseKr').textContent = p.kr; document.getElementById('phraseYue').textContent = p.yue; document.getElementById('phraseRom').textContent = p.rom; const m = document.getElementById('phraseModal'); m.classList.remove('hidden'); setTimeout(() => m.classList.add('opacity-100'), 10); }
+        function closePhraseModal() { const m = document.getElementById('phraseModal'); m.classList.remove('opacity-100'); setTimeout(() => m.classList.add('hidden'), 200); }
+        function saveCardBalance() { const val = document.getElementById('cardBalance').value; localStorage.setItem('seoulCardBalance', val); alert('已儲存！₩' + parseInt(val||0).toLocaleString()); switchTab('tools'); }
 
         function switchTab(tabId) {
             currentTab = tabId; document.querySelectorAll('.nav-btn').forEach(btn => { btn.classList.remove('active'); btn.classList.add('cute-btn-inactive'); });
@@ -1065,6 +1204,7 @@ function renderOverview() {
             else if (tabId === 'checklist') renderChecklist(); 
             else if (tabId === 'transport') renderTransport(); 
             else if (tabId === 'lotteworld') renderLotteGuide();
+            else if (tabId === 'tools') renderTools();
             else if (tabId === 'shopping' || tabId === 'food') renderGuide(tabId); 
             else renderDay(tabId); 
             
