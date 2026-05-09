@@ -1131,6 +1131,30 @@ function renderTools() {
                             </div>
                         </div>
 
+                        <div class="cute-card border-orange-200 p-5">
+                            <h3 class="font-cute text-xl font-bold text-orange-500 mb-4 flex items-center gap-2">
+                                <span class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-xl">💱</span>
+                                韓幣 ↔ 港幣 快速轉換
+                            </h3>
+                            <div class="bg-orange-50/50 p-4 rounded-2xl border-2 border-orange-200">
+                                <p class="text-sm text-orange-600 font-bold mb-3">💡 匯率：1 KRW = 0.0058 HKD</p>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="flex-1">
+                                        <label class="block text-xs font-bold text-orange-500 mb-1">港幣 (HKD)</label>
+                                        <input type="number" id="convHkd" class="modal-input !border-orange-300" placeholder="例: 100" oninput="convertToKrw()">
+                                    </div>
+                                    <button onclick="swapCurrency()" class="mt-5 bg-orange-200 hover:bg-orange-300 text-orange-600 w-10 h-10 rounded-full flex items-center justify-center transition-colors font-bold">⇄</button>
+                                    <div class="flex-1">
+                                        <label class="block text-xs font-bold text-orange-500 mb-1">韓幣 (KRW)</label>
+                                        <input type="number" id="convKrw" class="modal-input !border-orange-300" placeholder="例: 20000" oninput="convertToHkd()">
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-xl p-3 text-center border-2 border-orange-200">
+                                    <p class="text-xs text-gray-500 font-bold" id="convResult">輸入金額自動轉換</p>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="cute-card border-purple-200 p-5">
                             <h3 class="font-cute text-xl font-bold text-purple-600 mb-4 flex items-center gap-2">
                                 <span class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-xl">👗</span>
@@ -1194,6 +1218,9 @@ function renderTools() {
         function showPhrase(i) { const p = window.phrasesData[i]; document.getElementById('phraseKr').textContent = p.kr; document.getElementById('phraseYue').textContent = p.yue; document.getElementById('phraseRom').textContent = p.rom; const m = document.getElementById('phraseModal'); m.classList.remove('hidden'); setTimeout(() => m.classList.add('opacity-100'), 10); }
         function closePhraseModal() { const m = document.getElementById('phraseModal'); m.classList.remove('opacity-100'); setTimeout(() => m.classList.add('hidden'), 200); }
         function saveCardBalance() { const val = document.getElementById('cardBalance').value; localStorage.setItem('seoulCardBalance', val); alert('已儲存！₩' + parseInt(val||0).toLocaleString()); switchTab('tools'); }
+        function convertToKrw() { const hkd = parseFloat(document.getElementById('convHkd').value) || 0; const krw = Math.round(hkd / 0.0058); document.getElementById('convKrw').value = krw; document.getElementById('convResult').textContent = hkd + ' HKD ≈ ₩' + krw.toLocaleString() + ' KRW'; }
+        function convertToHkd() { const krw = parseFloat(document.getElementById('convKrw').value) || 0; const hkd = krw * 0.0058; document.getElementById('convHkd').value = hkd.toFixed(2); document.getElementById('convResult').textContent = '₩' + krw.toLocaleString() + ' KRW ≈ ' + hkd.toFixed(2) + ' HKD'; }
+        function swapCurrency() { const hkd = document.getElementById('convHkd').value; const krw = document.getElementById('convKrw').value; document.getElementById('convHkd').value = krw; document.getElementById('convKrw').value = hkd; convertToKrw(); }
 
         function switchTab(tabId) {
             currentTab = tabId; document.querySelectorAll('.nav-btn').forEach(btn => { btn.classList.remove('active'); btn.classList.add('cute-btn-inactive'); });
